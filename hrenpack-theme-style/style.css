@@ -1,0 +1,251 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+:root {
+    --hrenpack-background: #ededed;
+    --hrenpack-foreground: #121212;
+    --hrenpack-bg-ahren: #aaa;
+    --hrenpack-color-ahren: #222;
+    --hrenpack-background-er: #aaa;
+    --hrenpack-foreground-er: #222;
+    --hrenpack-a-hover-color: #c000c0;
+    --hrenpack-a-pressed-color: #f0f;
+    --hrenpack-fcu-border-radius: 0.375rem;
+    --hrenpack-fcu-border-width: 1px;
+    --hrenpack-fcu-border-style: solid;
+    --hrenpack-fcu-border-color: #dee2e6;
+    --hrenpack-fcu-color: #212529;
+    --hrenpack-fcu-bg: #fff;
+    --hrenpack-fcu-grad: #fab;
+    --hrenpack-step-bar-circle-bg: var(--hrenpack-foreground);
+    --hrenpack-step-bar-circle-active-bg: var(--hrenpack-a-hover-color);
+    --hrenpack-step-bar-circle-completed-bg: var(--hrenpack-foreground);
+    --hrenpack-step-bar-circle-active-color: var(--hrenpack-background);
+    --hrenpack-step-bar-circle-completed-color: var(--hrenpack-background);
+    --hrenpack-step-bar-circle-border-color: var(--hrenpack-foreground);
+    --hrenpack-step-bar-circle-border-active-color: var(--hrenpack-a-hover-color);
+    --hrenpack-step-bar-circle-border-completed-color: var(--hrenpack-a-hover-color);
+    --hrenpack-step-bar-label-color: var(--hrenpack-foreground);
+    --hrenpack-step-bar-completed-label-color: var(--hrenpack-color-ahren);
+    --hrenpack-strip-color: #ddd;
+    --hrenpack-strip-color-dark: #333;
+    --hrenpack-purple-gradient-color: #ff88ff;
+    --hrenpack-purple-gradient: linear-gradient(135deg, var(--hrenpack-background) 0%, var(--hrenpack-purple-gradient-color) 100%);
+    --hrenpack-lighter-color: #456;
+    --hrenpack-e8-color: #e8e8e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PT Sans", serif;
+    font-weight: 400;
+    min-height: 100vh;
+    background: var(--hrenpack-background);
+    color: var(--hrenpack-foreground);
+    margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--hrenpack-a-hover-color);
+}
+
+hr {
+    color: var(--hrenpack-a-hover-color);
+    position: relative;
+    top: 16px;
+}
+
+footer {
+    width: 100%;
+    background: #121212;
+    color: #ededed;
+    position: relative;
+    padding: 20px;
+}
+
+.btn-hren {
+    background: var(--hrenpack-foreground);
+    color: var(--hrenpack-background);
+}
+
+.btn-hren:hover {
+    background: var(--hrenpack-a-hover-color);
+    color: var(--hrenpack-foreground);
+}
+
+.btn-hren:active {
+    background-color: var(--hrenpack-a-hover-color);
+    color: var(--hrenpack-foreground);
+}
+
+.h-non-center {
+    text-align: left;
+}
+
+.h-non-block {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.form-control-unline {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    border: var(--hrenpack-fcu-border-width) solid var(--hrenpack-fcu-border-color);
+    border-radius: var(--hrenpack-fcu-border-radius);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+table {
+    border: var(--hrenpack-foreground) solid 3px;
+
+    thead {
+        text-align: center;
+        font-weight: 600;
+    }
+
+    td {
+        border: var(--hrenpack-foreground) solid 1px;
+    }
+}
+
+.link-non-format {
+    color: inherit;
+}
+
+.form {
+    width: 30%;
+    margin-left: 35%;
+    padding: 10px;
+    background: linear-gradient(45deg, var(--hrenpack-fcu-grad), var(--hrenpack-background), var(--hrenpack-fcu-grad));
+    color: var(--hrenpack-foreground);
+    border: #AA22FF solid 2px;
+    border-radius: 10px;
+
+    input, select {
+        border: #c000c0 solid 1px;
+        outline: none !important;
+    }
+
+    label {
+        width: 100%;
+        text-align: center;
+    }
+
+    button, input[type="submit"] {
+        text-align: center;
+        width: 50%;
+        margin-left: 25%;
+    }
+}
+
+.vertical-line {
+    display: inline;
+    margin-inline-start: auto; /* Автоматический отступ слева */
+    margin-inline-end: auto;   /* Автоматический отступ справа */
+    overflow: hidden;          /* Скрывает выходящее за границы содержимое */
+    border-style: inset;       /* Граница с эффектом "вдавленности" */
+    border-width: 1px;         /* Толщина границы */
+    height: 100%;
+    background: #c000c0;
+}
+
+.undisabled {
+    pointer-events: auto !important;
+    cursor: default !important;
+    opacity: 1 !important;
+    border: inherit;
+}
+
+step-bar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+#hrenpack-change-theme-div {
+    display: flex;
+}
+
+#hrenpack-change-theme-div #hrenpack-toggle-theme {
+    margin: 10px 10px 10px auto;
+    min-width: 10%;
+    max-width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.grid-div, grid-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.grid-panel {
+    background: var(--hrenpack-background);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 16px var(--hrenpack-a-pressed-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--hrenpack-a-pressed-color);
+}
+
+.grid-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.first-line-indent {
+    text-indent: 5%;
+}
+
+.singular-panel, .panel {
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px var(--hrenpack-a-pressed-color);
+    text-align: center;
+}
+
+.singular-panel__header, .panel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.singular-panel__header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.code-block {
+    margin: 10px;
+    padding: 10px;
+    background: var(--hrenpack-bg-ahren);
+    color: var(--hrenpack-color-ahren);
+    border-radius: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,14 @@
+.grid-panel {
+    cursor: pointer;
+
+    p {text-align: center}
+
+    h6 {
+        text-align: right;
+        margin: auto;
+    }
+}
+
+h3 {
+    margin: 5% 0;
+}

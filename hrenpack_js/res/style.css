@@ -1,0 +1,15 @@
+table {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+#documentation-link-div {
+    margin-top: 2%;
+    margin-left: 85%;
+
+    a {
+        font-weight: bold;
+        font-size: 16pt;
+    }
+}

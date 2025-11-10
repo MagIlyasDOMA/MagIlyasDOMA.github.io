@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Документация Filework - Hrenpack</title>
+    <link rel="stylesheet" href="/hrenpack_js/hrenpack.css">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/hrenpack-theme-style/style.css" id="hrenpack-theme-stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="/hrenpack/documentation/style.css">
+	
+
+</head>
+<body>
+    <header class="panel">
+        <div class="panel__header">
+            <p></p>
+            <h1>📁 Документация Filework</h1>
+            <button class="btn btn-hren" id="hrenpack-toggle-theme">Изменить тему</button>
+        </div>
+        
+	<div class="version">Субпакет для работы с файлами</div>
+    <div class="description">
+        Полная документация модулей для работы с файлами различных форматов в пакете <a href="/hrenpack/documentation">Hrenpack</a>.
+    </div>
+
+    </header>
+    
+    <grid-div class="container">
+        <!-- Основной модуль filework -->
+        <div class="module-card" data-filename="__init__">
+            <div class="module-header">
+                <div class="module-name">📄 __init__.py</div>
+            </div>
+            <div class="module-purpose">Базовые классы для работы с текстовыми файлами и специализированными форматами</div>
+
+            <div class="class-list">
+                <div class="class-item">
+                    <div class="class-name">TextFile</div>
+                    <div class="function-description">Базовый класс для работы с текстовыми файлами</div>
+                    <div class="parameters">
+                        <strong>Основные методы:</strong> read(), rewrite(), add_data(), read_lines(), edit_line(), copy()
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">SRTSubtitleFile</div>
+                    <div class="function-description">Класс для работы с файлами субтитров SRT</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> read_subtitle(), edit_line_subtitle_text(), edit_timecode()
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">ConfigurationFile</div>
+                    <div class="function-description">Класс для работы с INI-конфигурационными файлами</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> get_value(), set_value(), get_boolean(), get_int(), get_float()
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">JavaScriptObjectNotationFile</div>
+                    <div class="function-description">Класс для работы с JSON-файлами</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> get_value(), set_value(), delete_value(), save()
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">CommaSeparatedValuesFile</div>
+                    <div class="function-description">Класс для работы с CSV-файлами</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> read_data(), write_data()
+                    </div>
+                </div>
+            </div>
+
+            <div class="function-list">
+                <div class="function-item">
+                    <div class="function-name">extension_check(path: str, *extensions)</div>
+                    <div class="function-description">Проверяет расширение файла на соответствие ожидаемым</div>
+                </div>
+
+                <div class="function-item">
+                    <div class="function-name">create_file_if_not_exists(path)</div>
+                    <div class="function-description">Создает файл, если он не существует</div>
+                </div>
+
+                <div class="function-item">
+                    <div class="function-name">write_file_if_not_exists(path: str, text: str = '')</div>
+                    <div class="function-description">Создает и записывает файл, если он не существует</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модуль source_code.py -->
+        <div class="module-card indev" data-filename="source_code">
+            <div class="module-header">
+                <div class="module-name">💻 source_code.py</div>
+            </div>
+            <div class="module-purpose">Классы для работы с исходным кодом программ (в разработке)</div>
+
+            <div class="class-list">
+                <div class="class-item">
+                    <div class="class-name">ProgrammingLanguageSourceFile</div>
+                    <div class="function-description">Базовый класс для файлов исходного кода</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> online_compile() - компиляция через онлайн-сервис
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">PythonFile</div>
+                    <div class="function-description">Специализированный класс для Python-файлов</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> run() - выполнение кода Python
+                    </div>
+                </div>
+            </div>
+
+            <div class="function-list">
+                <div class="function-item">
+                    <div class="function-name">CompileError</div>
+                    <div class="function-description">Исключение для ошибок компиляции</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модуль xml.py -->
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-name">📊 xml.py</div>
+            </div>
+            <div class="module-purpose">Классы для работы с XML и HTML файлами</div>
+
+            <div class="class-list">
+                <div class="class-item">
+                    <div class="class-name">XMLParser</div>
+                    <div class="function-description">Расширенный парсер XML на основе BeautifulSoup</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> del_tag() - удаление тегов по имени
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">ParserMixin</div>
+                    <div class="function-description">Миксин с автоматическим сохранением для XML-парсеров</div>
+                    <div class="parameters">
+                        <strong>Особенность:</strong> Все методы автоматически сохраняют изменения
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">ExtensibleMarkupLanguageFile</div>
+                    <div class="function-description">Класс для работы с XML-файлами</div>
+                    <div class="parameters">
+                        <strong>Методы:</strong> Все методы BeautifulSoup с автосохранением
+                    </div>
+                </div>
+
+                <div class="class-item">
+                    <div class="class-name">HyperTextMarkupLanguageFile</div>
+                    <div class="function-description">Класс для работы с HTML-файлами</div>
+                    <div class="parameters">
+                        <strong>Особенность:</strong> Использует HTML-парсер по умолчанию
+                    </div>
+                </div>
+            </div>
+
+            <div class="function-list">
+                <div class="function-item">
+                    <div class="function-name">xml_save(func)</div>
+                    <div class="function-description">Декоратор для автоматического сохранения после методов парсера</div>
+                </div>
+            </div>
+        </div>
+    </grid-div>
+
+    <div class="header">
+        <h2>🎯 Основные возможности Filework</h2>
+        <div class="module-purpose">
+            <p><strong>Поддерживаемые форматы:</strong> TXT, INI, JSON, CSV, SRT, XML, HTML, исходный код</p>
+            <p><strong>Кодировки:</strong> Поддержка различных кодировок, UTF-8 по умолчанию</p>
+            <p><strong>Автосохранение:</strong> Автоматическое сохранение изменений в XML/HTML файлах</p>
+            <p><strong>Валидация:</strong> Проверка расширений файлов и корректности форматов</p>
+            <p><strong>Безопасность:</strong> Подтверждение опасных операций (удаление файлов)</p>
+        </div>
+    </div>
+
+    <script src="/hrenpack_js/cookie.js"></script>
+    <script src="/hrenpack-theme-style/script.js"></script>
+    
+    <script src="/hrenpack/documentation/sort.js"></script>
+    
+
+</body>
+</html>

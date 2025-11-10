@@ -1,0 +1,212 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+.header {
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px var(--hrenpack-a-pressed-color);
+    text-align: center;
+}
+
+.header__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header, .panel {
+    .version {
+        color: var(--hrenpack-a-hover-color);
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+}
+
+.header, .panel {
+    .description {
+        color: var(--hrenpack-foreground-er);
+        font-size: 1.1em;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--hrenpack-strip-color);
+}
+
+.module-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--hrenpack-strip-color-dark) /*#2d3748*/;
+}
+
+.module-purpose {
+    color: var(--hrenpack-lighter-color);
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.function-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.function-item {
+    background: var(--hrenpack-e8-color);
+    margin: 8px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 3px solid #4299e1;
+}
+
+.function-name {
+    font-weight: bold;
+    color: #2b6cb0;
+    margin-bottom: 5px;
+}
+
+.function-description {
+    color: #4a5568;
+    font-size: 0.9em;
+}
+
+.parameters {
+    background: var(--hrenpack-strip-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 0.85em;
+}
+
+.returns {
+    background: var(--hrenpack-strip-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 0.85em;
+    border-left: 3px solid #38b2ac;
+}
+
+.class-list {
+    margin-top: 15px;
+}
+
+.class-item {
+    background: var(--hrenpack-e8-color);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #e53e3e;
+}
+
+.class-name {
+    font-weight: bold;
+    color: #c53030;
+    margin-bottom: 8px;
+}
+
+.parameter-list {
+    margin-top: 15px;
+}
+
+.parameter-item {
+    background: var(--hrenpack-e8-color);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid limegreen;
+}
+
+.parameter-name {
+    font-weight: bold;
+    color: limegreen;
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #121212;
+    color: #ededed;
+    margin-top: 30px;
+}
+
+.highlight {
+    background: linear-gradient(120deg, var(--hrenpack-e8-color) 0%, var(--hrenpack-strip-color) 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+.indev {
+    border-left: 10px solid;
+    border-image: repeating-linear-gradient(
+            0deg,
+            black,
+            black min(40px, 10%),
+            yellow min(40px, 10%),
+            yellow min(80px, 20%)
+    ) 1;
+}
+
+#plink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+    margin-left: 45%;
+}
+
+.module-list {
+    list-style: none;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.module-card {
+    background: var(--hrenpack-background);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 16px var(--hrenpack-a-pressed-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--hrenpack-a-pressed-color);
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}

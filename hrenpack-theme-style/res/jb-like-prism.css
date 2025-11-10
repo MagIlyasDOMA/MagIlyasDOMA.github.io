@@ -1,0 +1,432 @@
+/* Prism.js theme based on JetBrains CodeMirror theme */
+:root {
+    --background-color: #1e1f22;
+    --text-color: #bcbec4;
+    --keyword-color: #cf8e6d;
+    --selected-background: #2b2d30;
+    --gutter-background: #252526;
+    --gutter-marker-color: #ffffff;
+    --gutter-marker-subtle-color: #a0a0a0;
+    --line-number-color: #4b5059;
+    --cursor-color: #ced0d6;
+    --comment-color: #7a7e85;
+    --atom-color: #56a8f5;
+    --number-color: #2aacb8;
+    --attribute-color: #d19a66;
+    --def-color: #1285D1;
+    --tag-color: #d5b778;
+    --type-color: #1285D1;
+    --property-color: #bcbec4;
+    --builtin-color: #d19a66;
+    --string-color: #6aab73;
+    --variable-color: #bcbec4;
+    --variable-2-color: #56a8f5;
+    --variable-3-color: #56a8f5;
+    --def-2-color: #aaf;
+    --bracket-color: #bcbec4;
+    --header-color: #56a8f5;
+    --link-color: #56a8f5;
+    --error-background: #402929;
+    --error-text-color: #f75464;
+    --activeline-background: #2a2d2e;
+    --matching-bracket-color: #bcbec4;
+}
+
+/* Prism.js base styles */
+code[class*="language-"],
+pre[class*="language-"] {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 4;
+    hyphens: none;
+    border-radius: 4px;
+}
+
+/* Code block */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border: 1px solid #333;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: 0.1em 0.3em;
+    border-radius: 0.3em;
+    white-space: normal;
+}
+
+/* Common tokens for all languages */
+.language-html .token.comment,
+.language-css .token.comment,
+.language-javascript .token.comment,
+.language-js .token.comment,
+.language-typescript .token.comment,
+.language-ts .token.comment,
+.language-xml .token.comment,
+.language-markup .token.comment {
+    color: var(--comment-color);
+}
+
+.language-html .token.prolog,
+.language-html .token.doctype,
+.language-html .token.cdata,
+.language-xml .token.prolog,
+.language-xml .token.doctype,
+.language-xml .token.cdata,
+.language-markup .token.prolog,
+.language-markup .token.doctype,
+.language-markup .token.cdata {
+    color: var(--tag-color);
+}
+
+.language-html .token.punctuation,
+.language-css .token.punctuation,
+.language-javascript .token.punctuation,
+.language-js .token.punctuation,
+.language-typescript .token.punctuation,
+.language-ts .token.punctuation,
+.language-xml .token.punctuation,
+.language-markup .token.punctuation {
+    color: var(--bracket-color);
+}
+
+.language-html .token.namespace,
+.language-css .token.namespace,
+.language-javascript .token.namespace,
+.language-js .token.namespace,
+.language-typescript .token.namespace,
+.language-ts .token.namespace,
+.language-xml .token.namespace,
+.language-markup .token.namespace {
+    opacity: 0.7;
+}
+
+/* HTML specific tokens */
+.language-html .token.tag,
+.language-xml .token.tag,
+.language-markup .token.tag {
+    color: var(--tag-color);
+}
+
+.language-html .token.attr-name,
+.language-xml .token.attr-name,
+.language-markup .token.attr-name {
+    color: var(--attribute-color);
+}
+
+.language-html .token.attr-value,
+.language-xml .token.attr-value,
+.language-markup .token.attr-value {
+    color: var(--string-color);
+}
+
+.language-html .token.string,
+.language-xml .token.string,
+.language-markup .token.string {
+    color: var(--string-color);
+}
+
+/* CSS specific tokens */
+.language-css .token.keyword {
+    color: var(--keyword-color);
+}
+
+.language-css .token.property {
+    color: var(--property-color);
+}
+
+.language-css .token.string {
+    color: var(--string-color);
+}
+
+.language-css .token.function {
+    color: var(--def-color);
+}
+
+.language-css .token.selector {
+    color: var(--tag-color);
+}
+
+.language-css .token.atrule .token-rule {
+    color: var(--keyword-color);
+}
+
+.language-css .token.important {
+    color: var(--keyword-color);
+    font-weight: bold;
+}
+
+/* JavaScript/TypeScript specific tokens */
+.language-javascript .token.keyword,
+.language-js .token.keyword,
+.language-typescript .token.keyword,
+.language-ts .token.keyword {
+    color: var(--keyword-color);
+}
+
+.language-javascript .token.function,
+.language-js .token.function,
+.language-typescript .token.function,
+.language-ts .token.function {
+    color: var(--def-color);
+}
+
+.language-javascript .token.class-name,
+.language-js .token.class-name,
+.language-typescript .token.class-name,
+.language-ts .token.class-name {
+    color: var(--type-color);
+}
+
+.language-javascript .token.number,
+.language-js .token.number,
+.language-typescript .token.number,
+.language-ts .token.number {
+    color: var(--number-color);
+}
+
+.language-javascript .token.string,
+.language-js .token.string,
+.language-typescript .token.string,
+.language-ts .token.string {
+    color: var(--string-color);
+}
+
+.language-javascript .token.boolean,
+.language-js .token.boolean,
+.language-typescript .token.boolean,
+.language-ts .token.boolean {
+    color: var(--number-color);
+}
+
+.language-javascript .token.operator,
+.language-js .token.operator,
+.language-typescript .token.operator,
+.language-ts .token.operator {
+    color: var(--text-color);
+}
+
+.language-javascript .token.builtin,
+.language-js .token.builtin,
+.language-typescript .token.builtin,
+.language-ts .token.builtin {
+    color: var(--builtin-color);
+}
+
+/* Common programming language tokens */
+.language-javascript .token.variable,
+.language-js .token.variable,
+.language-typescript .token.variable,
+.language-ts .token.variable,
+.language-css .token.variable,
+.language-scss .token.variable,
+.language-less .token.variable {
+    color: var(--variable-color);
+}
+
+.language-javascript .token.variable-2,
+.language-js .token.variable-2,
+.language-typescript .token.variable-2,
+.language-ts .token.variable-2 {
+    color: var(--variable-2-color);
+}
+
+.language-javascript .token.variable-3,
+.language-js .token.variable-3,
+.language-typescript .token.variable-3,
+.language-ts .token.variable-3 {
+    color: var(--variable-3-color);
+}
+
+/* Number tokens for all languages */
+.language-html .token.number,
+.language-css .token.number,
+.language-javascript .token.number,
+.language-js .token.number,
+.language-typescript .token.number,
+.language-ts .token.number,
+.language-xml .token.number,
+.language-markup .token.number {
+    color: var(--number-color);
+}
+
+/* Boolean tokens */
+.language-javascript .token.boolean,
+.language-js .token.boolean,
+.language-typescript .token.boolean,
+.language-ts .token.boolean,
+.language-json .token.boolean {
+    color: var(--number-color);
+}
+
+/* Entity and URL tokens */
+.language-html .token.entity,
+.language-css .token.entity,
+.language-javascript .token.entity,
+.language-js .token.entity,
+.language-typescript .token.entity,
+.language-ts .token.entity {
+    color: var(--atom-color);
+    cursor: help;
+}
+
+.language-html .token.url,
+.language-css .token.url,
+.language-javascript .token.url,
+.language-js .token.url,
+.language-typescript .token.url,
+.language-ts .token.url {
+    color: var(--link-color);
+}
+
+/* Bold and italic */
+.language-html .token.bold,
+.language-css .token.bold,
+.language-javascript .token.bold,
+.language-js .token.bold,
+.language-typescript .token.bold,
+.language-ts .token.bold,
+.language-xml .token.bold,
+.language-markup .token.bold {
+    font-weight: bold;
+}
+
+.language-html .token.italic,
+.language-css .token.italic,
+.language-javascript .token.italic,
+.language-js .token.italic,
+.language-typescript .token.italic,
+.language-ts .token.italic,
+.language-xml .token.italic,
+.language-markup .token.italic {
+    font-style: italic;
+}
+
+/* Deleted and inserted */
+.language-diff .token.deleted,
+.language-css .token.deleted,
+.language-javascript .token.deleted,
+.language-js .token.deleted,
+.language-typescript .token.deleted,
+.language-ts .token.deleted {
+    color: var(--error-text-color);
+    background: var(--error-background);
+}
+
+.language-diff .token.inserted,
+.language-css .token.inserted,
+.language-javascript .token.inserted,
+.language-js .token.inserted,
+.language-typescript .token.inserted,
+.language-ts .token.inserted {
+    color: var(--string-color);
+    background: rgba(106, 171, 115, 0.1);
+}
+
+/* Line highlighting */
+.line-highlight {
+    background: var(--activeline-background);
+    background: linear-gradient(to right, rgba(42, 45, 46, 0.8) 70%, rgba(42, 45, 46, 0));
+}
+
+/* Line numbers */
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid #333;
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: var(--line-number-color);
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
+/* Command line */
+.command-line-prompt {
+    border-right: 1px solid #333;
+    display: block;
+    float: left;
+    font-size: 100%;
+    letter-spacing: -1px;
+    margin-right: 0.8em;
+    pointer-events: none;
+    text-align: right;
+}
+
+.command-line-prompt > span:before {
+    color: var(--line-number-color);
+    content: ' ';
+    display: block;
+    padding-right: 0.8em;
+}
+
+/* Selection */
+code[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+pre[class*="language-"]::selection {
+    background: var(--selected-background);
+    text-shadow: none;
+}
+
+/* Error highlighting */
+.language-html .token.error,
+.language-css .token.error,
+.language-javascript .token.error,
+.language-js .token.error,
+.language-typescript .token.error,
+.language-ts .token.error,
+.language-xml .token.error,
+.language-markup .token.error {
+    background: var(--error-background);
+    color: var(--error-text-color);
+}
+
+/* Matching bracket highlight */
+.language-html .token.bracket-highlight,
+.language-css .token.bracket-highlight,
+.language-javascript .token.bracket-highlight,
+.language-js .token.bracket-highlight,
+.language-typescript .token.bracket-highlight,
+.language-ts .token.bracket-highlight,
+.language-xml .token.bracket-highlight,
+.language-markup .token.bracket-highlight {
+    outline: 1px solid var(--matching-bracket-color);
+    background: rgba(188, 190, 196, 0.1);
+}

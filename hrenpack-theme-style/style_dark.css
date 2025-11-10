@@ -1,0 +1,18 @@
+@import url('style.css');
+
+:root {
+    --hrenpack-background: #121212;
+    --hrenpack-foreground: #ededed;
+    --hrenpack-fcu-grad: #612;
+    --hrenpack-background-er: #222;
+    --hrenpack-foreground-er: #aaa;
+    --hrenpack-bg-ahren: #222;
+    --hrenpack-color-ahren: #aaa;
+    --hrenpack-strip-color: #333;
+    --hrenpack-strip-color-dark: #ddd;
+    --hrenpack-purple-gradient-color: var(--hrenpack-a-hover-color);
+    --hrenpack-lighter-color: #cba;
+    --hrenpack-e8-color: #1f1f1f;
+}
+
+

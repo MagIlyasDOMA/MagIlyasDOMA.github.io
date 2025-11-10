@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Документация Hrenpack - Hrenpack</title>
+    <link rel="stylesheet" href="/hrenpack_js/hrenpack.css">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/hrenpack-theme-style/style.css" id="hrenpack-theme-stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="/hrenpack/documentation/style.css">
+	
+
+</head>
+<body>
+    <header class="panel">
+        <div class="panel__header">
+            <p></p>
+            <h1>📚 Документация Hrenpack</h1>
+            <button class="btn btn-hren" id="hrenpack-toggle-theme">Изменить тему</button>
+        </div>
+        
+	<div class="version">Версия 2.0</div>
+    <div class="description"> Полная документация к Python-пакету Hrenpack. Содержит утилитарные функции и классы для работы с файлами, строками, типами данных и системные операции. </div>
+
+    </header>
+    
+    <base href="/hrenpack/documentation/">
+    <div class="container">
+        <div class="modules-grid">
+            <div class="module-card" data-filename="___subpackages">
+                <div class="module-header">
+                    <div class="module-name">📦 Субпакеты</div>
+                </div>
+                <ul class="module-list">
+                    <li>
+                        <details open>
+                            <summary><a href="framework">framework</a></summary>
+                            <ul class="module-list">
+                                <li><a href="framework/django.html">django</a></li>
+                                <li>
+                                    <details open>
+                                        <summary><a href="framework/kivy">kivy</a></summary>
+                                        <ul class="module-list">
+                                            <li><a href="framework/kivy/widgets.html">widgets</a></li>
+                                        </ul>
+                                    </details>
+                                </li>
+                                <li><a href="framework/pyside6.html">pyside6</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="filework.html">filework</a></li>
+                </ul>
+            </div>
+
+            <!-- Модуль boolwork.py -->
+            <div class="module-card" data-filename="boolwork">
+                <div class="module-header">
+                    <div class="module-name">🔧 boolwork.py</div>
+                </div>
+                <div class="module-purpose">Работа с булевыми значениями, преобразование, проверка и логические операции</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">booltest(bull: stb) -> None</div>
+                        <div class="function-description">Проверяет, является ли аргумент булевым значением или строковым представлением булевого значения</div>
+                        <div class="parameters">
+                            <strong>Параметры:</strong> bull - значение для проверки (строка или булево)
+                        </div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">str_to_bool(input: stb) -> bool</div>
+                        <div class="function-description">Преобразует строку в булево значение</div>
+                        <div class="parameters">
+                            <strong>Поддерживаемые форматы:</strong> 'true', 'false', '1', '0' (регистронезависимо)
+                        </div>
+                        <div class="returns">
+                            <strong>Возвращает:</strong> преобразованное булево значение
+                        </div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">bool_list_count(input: tdl) -> dict</div>
+                        <div class="function-description">Подсчитывает количество True и False в коллекции</div>
+                        <div class="returns">
+                            <strong>Возвращает:</strong> словарь с количеством True и False
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль charset.py -->
+            <div class="module-card" data-filename="charset">
+                <div class="module-header">
+                    <div class="module-name">📝 charset.py</div>
+                </div>
+                <div class="module-purpose">Работа с кодировками текста, определение и преобразование кодировок файлов</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">test_file_encoding(path: str, encoding: str, message: bool = False)</div>
+                        <div class="function-description">Тестирует возможность чтения файла в указанной кодировке</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">select_encoding(path: str) -> str</div>
+                        <div class="function-description">Автоматически подбирает подходящую кодировку для файла</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">detect_encoding(file_content) -> str</div>
+                        <div class="function-description">Определяет кодировку с учетом BOM-маркеров и использованием chardet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль classes.py -->
+            <div class="module-card" data-filename="classes">
+                <div class="module-header">
+                    <div class="module-name">🏗️ classes.py</div>
+                </div>
+                <div class="module-purpose">Полезные пользовательские классы для различных задач</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">stl (String List)</div>
+                        <div class="function-description">Расширенный список со строковым представлением. Автоматическое преобразование строки в список с синхронизацией представлений</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">DataClass</div>
+                        <div class="function-description">Универсальный класс для хранения данных со словареподобным интерфейсом</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">TkTemplate</div>
+                        <div class="function-description">Шаблон для создания оконных приложений Tkinter (только Windows)</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">TransposedList</div>
+                        <div class="function-description">Класс для транспонирования вложенных последовательностей</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль clipboard_work.py -->
+            <div class="module-card" data-filename="clipboard_work">
+                <div class="module-header">
+                    <div class="module-name">📋 clipboard_work.py</div>
+                </div>
+                <div class="module-purpose">Работа с буфером обмена: копирование, вставка и работа с изображениями</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">get_clipboard_image() -> Image</div>
+                        <div class="function-description">Получает изображение из буфера обмена</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">copy_text(text: str) -> None</div>
+                        <div class="function-description">Копирует текст в буфер обмена</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">insert_text() -> str</div>
+                        <div class="function-description">Вставляет текст из буфера обмена</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">clipboard_is_image() -> bool</div>
+                        <div class="function-description">Проверяет, содержится ли изображение в буфере обмена</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль cmd.py -->
+            <div class="module-card" data-filename="cmd">
+                <div class="module-header">
+                    <div class="module-name">💻 cmd.py</div>
+                </div>
+                <div class="module-purpose">Работа с файловой системой, путями и системными командами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">get_filename(), get_extension()</div>
+                        <div class="function-description">Функции для работы с путями файлов</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">create_file(), delete_file(), rename()</div>
+                        <div class="function-description">Операции с файлами</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">is_admin(), admin_error()</div>
+                        <div class="function-description">Проверка прав администратора</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">generate_random_filename()</div>
+                        <div class="function-description">Генерация случайного имени файла</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль __init__.py -->
+            <div class="module-card" data-filename="__init__">
+                <div class="module-header">
+                    <div class="module-name">📦 __init__.py</div>
+                </div>
+                <div class="module-purpose">Основной модуль пакета с общими утилитами и определениями типов</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">Типы данных</div>
+                        <div class="function-description">si, IntStr, NullStr, цветовые типы и шкалы оценок</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">sts(), of_utf8(), write()</div>
+                        <div class="function-description">Базовые утилиты для работы со строками и файлами</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">switch()</div>
+                        <div class="function-description">Аналог оператора switch-case</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">who_called_me(), get_resource()</div>
+                        <div class="function-description">Системные функции для отладки и доступа к ресурсам</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль algebra.py -->
+            <div class="module-card" data-filename="algebra">
+                <div class="module-header">
+                    <div class="module-name">🧮 algebra.py</div>
+                </div>
+                <div class="module-purpose">Математические классы для работы с прогрессиями</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">ArithmeticProgression</div>
+                        <div class="function-description">Арифметическая прогрессия с параметрами: first (первый член), difference (разность)</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">GeometricProgression</div>
+                        <div class="function-description">Геометрическая прогрессия с параметрами: first (первый член), denominator (знаменатель)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль hashwork.py -->
+            <div class="module-card" data-filename="hashwork">
+                <div class="module-header">
+                    <div class="module-name">🔐 hashwork.py</div>
+                </div>
+                <div class="module-purpose">Функции для хеширования паролей с использованием SHA и bcrypt</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">hash_password(password: str, sha_alg: Literal[1, 256, 384, 512, 224] = 256) -> str</div>
+                        <div class="function-description">Хеширует пароль с использованием алгоритмов SHA</div>
+                        <div class="parameters">
+                            <strong>Параметры:</strong> password - пароль для хеширования, sha_alg - алгоритм SHA
+                        </div>
+                        <div class="returns">
+                            <strong>Возвращает:</strong> хешированный пароль в виде строки
+                        </div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">hash_password_bcrypt(password: str) -> str</div>
+                        <div class="function-description">Хеширует пароль с использованием bcrypt</div>
+                        <div class="returns">
+                            <strong>Возвращает:</strong> хешированный пароль в формате bcrypt
+                        </div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">check_password_bcrypt(password: str, hashed_password: str) -> bool</div>
+                        <div class="function-description">Проверяет пароль против bcrypt хеша</div>
+                        <div class="returns">
+                            <strong>Возвращает:</strong> True если пароль совпадает, иначе False
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль date_and_time_work.py -->
+            <div class="module-card" data-filename="date_and_time_work">
+                <div class="module-header">
+                    <div class="module-name">📅 date_and_time_work.py</div>
+                </div>
+                <div class="module-purpose">Расширенные функции для работы с датой и временем</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">DateTime</div>
+                        <div class="function-description">Класс для работы с датой и временем, содержит календарные данные и сезоны</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> now() - возвращает текущую дату и время в структурированном формате
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">HoursMinutesAndSeconds</div>
+                        <div class="function-description">Класс для работы с временными интервалами</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> to_seconds(), from_seconds(), from_string(), арифметические операции
+                        </div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">time_format()</div>
+                        <div class="function-description">Форматирует время в различные форматы</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">datetime_to_str()</div>
+                        <div class="function-description">Конвертирует datetime в строку с различными опциями форматирования</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">string_to_datetime()</div>
+                        <div class="function-description">Парсит строку в объект datetime</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">perf_counter()</div>
+                        <div class="function-description">Декоратор для измерения времени выполнения функции</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль jswork.py -->
+            <div class="module-card indev" data-filename="jswork" >
+                <div class="module-header">
+                    <div class="module-name">🌐 jswork.py</div>
+                </div>
+                <div class="module-purpose">Генерация JavaScript кода из Python объектов (в разработке)</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">StringToJavascriptVariable</div>
+                        <div class="function-description">Класс для представления JavaScript переменных в Python</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">DictArg</div>
+                        <div class="function-description">Класс для создания JavaScript объектов из Python словарей</div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">arg_js(arg) -> str</div>
+                        <div class="function-description">Конвертирует Python объекты в JavaScript представление</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">js_function(func_name: str, *args)</div>
+                        <div class="function-description">Генерирует вызов JavaScript функции</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль encapsulation.py -->
+            <div class="module-card" data-filename="encapsulation">
+                <div class="module-header">
+                    <div class="module-name">🛡️ encapsulation.py</div>
+                </div>
+                <div class="module-purpose">Инструменты для работы с инкапсуляцией и наследованием в Python</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">AbstractClass</div>
+                        <div class="function-description">Базовый абстрактный класс, который нельзя инстанциировать напрямую</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">SafeInheritance</div>
+                        <div class="function-description">Мета-класс для безопасного наследования с обработкой конфликтов MRO</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">SafeMeta</div>
+                        <div class="function-description">Метакласс для безопасного наследования</div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">abstractmethod()</div>
+                        <div class="function-description">Декоратор для создания абстрактных методов</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">protectedmethod()</div>
+                        <div class="function-description">Декоратор для создания защищенных методов</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">privatemethod()</div>
+                        <div class="function-description">Декоратор для создания приватных методов</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">supermethod()</div>
+                        <div class="function-description">Декоратор для автоматического вызова родительского метода</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">inner_function()</div>
+                        <div class="function-description">Возвращает локальные переменные вызывающей функции</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль gpswork.py -->
+            <div class="module-card indev" data-filename="gpswork">
+                <div class="module-header">
+                    <div class="module-name">📍 gpswork.py</div>
+                </div>
+                <div class="module-purpose">Работа с GPS данными (в разработке)</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">GPS</div>
+                        <div class="function-description">Класс для работы с GPS модулем. В настоящее время не функционирует</div>
+                        <div class="parameters">
+                            <strong>Примечание:</strong> Модуль находится в стадии разработки и требует настройки GPS-сервиса
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль hidden_types.py -->
+            <div class="module-card" data-filename="hidden_types">
+                <div class="module-header">
+                    <div class="module-name">🔍 hidden_types.py</div>
+                </div>
+                <div class="module-purpose">Определения скрытых типов Python</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">dict_items</div>
+                        <div class="function-description">Тип объектов, возвращаемых методом dict.items()</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль decorators.py -->
+            <div class="module-card" data-filename="decorators">
+                <div class="module-header">
+                    <div class="module-name">🎀 decorators.py</div>
+                </div>
+                <div class="module-purpose">Полезные декораторы для различных задач</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">confirm(inp_text: str = "...")</div>
+                        <div class="function-description">Декоратор для запроса подтверждения перед выполнением функции</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">non_print</div>
+                        <div class="function-description">Декоратор для подавления вывода функции в консоль</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">args_kwargs(**kwargs)</div>
+                        <div class="function-description">Декоратор для обработки args и kwargs в функциях</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">debug_logging(start_message: str = '', end_message: str = '')</div>
+                        <div class="function-description">Декоратор для логирования начала и окончания выполнения функции</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">multi_decorator(*decorators)</div>
+                        <div class="function-description">Декоратор для применения нескольких декораторов одновременно</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль functionwork.py -->
+            <div class="module-card" data-filename="functions">
+                <div class="module-header">
+                    <div class="module-name">⚙️ functionwork.py</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с функциями и лямбда-выражениями</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">function_if(condition: bool, true, false=null, is_lambda: bool = False)</div>
+                        <div class="function-description">Условное выполнение функций или возврат значений</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">lambda_generator(func, *args, **kwargs)</div>
+                        <div class="function-description">Генерирует лямбда-функцию для вызова указанной функции с аргументами</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">callable_object(arg)</div>
+                        <div class="function-description">Создает вызываемый объект, который возвращает указанный аргумент</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль listwork.py -->
+            <div class="module-card" data-filename="listwork">
+                <div class="module-header">
+                    <div class="module-name">📋 listwork.py</div>
+                </div>
+                <div class="module-purpose">Расширенные функции для работы со списками, кортежами и словарями</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">intlist(input: list) -> list</div>
+                        <div class="function-description">Конвертирует все элементы списка в целые числа</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">floatlist(input: tuplist) -> list</div>
+                        <div class="function-description">Конвертирует все элементы списка в числа с плавающей точкой</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">split_list(input: Union[tuple, list], separator: str = ', ') -> str</div>
+                        <div class="function-description">Объединяет элементы списка в строку с указанным разделителем</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">merging_dictionaries(*dicts: dict) -> dict</div>
+                        <div class="function-description">Объединяет несколько словарей в один</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">if_dict_key(dct: dict, key) -> bool</div>
+                        <div class="function-description">Проверяет наличие ключа в словаре</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">dict_enumerate</div>
+                        <div class="function-description">Класс для перечисления элементов словаря с индексами</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">get_from_dict()</div>
+                        <div class="function-description">Извлекает значения из словаря по ключам с различными опциями</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">remove_all(), remove_multi()</div>
+                        <div class="function-description">Удаление элементов из списка</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль mixins.py -->
+            <div class="module-card" data-filename="mixins">
+                <div class="module-header">
+                    <div class="module-name">🔗 mixins.py</div>
+                </div>
+                <div class="module-purpose">Миксины для работы со слотами классов</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">SlotsReadMixin</div>
+                        <div class="function-description">Миксин для доступа к атрибутам слотов через индексацию</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> __getitem__ - доступ к атрибутам через квадратные скобки
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">SlotsMixin</div>
+                        <div class="function-description">Расширенный миксин с поддержкой чтения и записи атрибутов слотов</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> __setitem__ - установка значений атрибутов через индексацию
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль network.py -->
+            <div class="module-card" data-filename="network">
+                <div class="module-header">
+                    <div class="module-name">🌐 network.py</div>
+                </div>
+                <div class="module-purpose">Функции для работы с сетью, HTTP-запросами и загрузкой файлов</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">ReCaptchaV3</div>
+                        <div class="function-description">Класс для работы с Google reCAPTCHA v3</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> verify() - проверка токена reCAPTCHA
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">TestResponse</div>
+                        <div class="function-description">Класс для тестирования HTTP-ответов</div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">connection_check()</div>
+                        <div class="function-description">Проверяет наличие интернет-соединения</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">download_file()</div>
+                        <div class="function-description">Загружает файл по URL с поддержкой прогресс-бара</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">translate_text()</div>
+                        <div class="function-description">Переводит текст с использованием различных сервисов</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">GET_url()</div>
+                        <div class="function-description">Формирует URL для GET-запроса с параметрами</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль numwork.py -->
+            <div class="module-card" data-filename="numwork">
+                <div class="module-header">
+                    <div class="module-name">🔢 numwork.py</div>
+                </div>
+                <div class="module-purpose">Математические функции и работа с числами в различных системах счисления</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">Number</div>
+                        <div class="function-description">Класс для работы с числами в различных системах счисления</div>
+                        <div class="parameters">
+                            <strong>Атрибуты:</strong> dec, hex, oct - представления числа в разных системах
+                        </div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">hex_to_dec(), dec_to_hex()</div>
+                        <div class="function-description">Конвертация между шестнадцатеричной и десятичной системами</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">oct_to_dec(), dec_to_oct()</div>
+                        <div class="function-description">Конвертация между восьмеричной и десятичной системами</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">true_chance(chance: float) -> bool</div>
+                        <div class="function-description">Возвращает True с указанной вероятностью в процентах</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">to_fahrenheit(), to_celsius()</div>
+                        <div class="function-description">Конвертация температур между шкалами Цельсия и Фаренгейта</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">closest_number()</div>
+                        <div class="function-description">Находит ближайшее число из списка к указанному</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль print_color.py -->
+            <div class="module-card" data-filename="print_color">
+                <div class="module-header">
+                    <div class="module-name">🎨 print_color.py</div>
+                </div>
+                <div class="module-purpose">Цветной вывод в консоль с использованием ANSI-кодов</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">ColorsANSI</div>
+                        <div class="function-description">Класс с ANSI-кодами цветов для терминала</div>
+                        <div class="parameters">
+                            <strong>Цвета:</strong> BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET
+                        </div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">print_color()</div>
+                        <div class="function-description">Выводит цветной текст в консоль</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">print_error(), print_success(), print_warning(), print_info()</div>
+                        <div class="function-description">Специализированные функции для вывода сообщений разных типов</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">color_format(), error_format(), success_format()</div>
+                        <div class="function-description">Функции для форматирования текста с цветами без вывода</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль kwargswork.py -->
+            <div class="module-card" data-filename="kwargswork">
+                <div class="module-header">
+                    <div class="module-name">⚙️ kwargswork.py</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с ключевыми аргументами функций</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">kwarg_return(kwargs: dict, key: str, false)</div>
+                        <div class="function-description">Возвращает значение из kwargs или значение по умолчанию</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">kwarg_function(kwargs: dict, key: str, true, false)</div>
+                        <div class="function-description">Выполняет разные функции в зависимости от наличия ключа в kwargs</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">get_kwarg()</div>
+                        <div class="function-description">Извлекает значение из kwargs с различными опциями обработки</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль python.py -->
+            <div class="module-card" data-filename="python">
+                <div class="module-header">
+                    <div class="module-name">🐍 python.py</div>
+                </div>
+                <div class="module-purpose">Функции для работы с системой импорта Python</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">import_all_submodules(package_name)</div>
+                        <div class="function-description">Динамически импортирует все подмодули в указанном пакете</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль slugwork.py -->
+            <div class="module-card" data-filename="slugwork">
+                <div class="module-header">
+                    <div class="module-name">🔤 slugwork.py</div>
+                </div>
+                <div class="module-purpose">Транслитерация и создание slug-строк</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">translit(data: str, lat_to_cyr: bool = False, translit_no_letters: bool = True) -> str</div>
+                        <div class="function-description">Транслитерирует текст между кириллицей и латиницей</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">slugify(data: str, translit_no_letters: bool = False) -> str</div>
+                        <div class="function-description">Создает slug из строки (URL-дружественное представление)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль strwork.py -->
+            <div class="module-card" data-filename="strwork">
+                <div class="module-header">
+                    <div class="module-name">📝 strwork.py</div>
+                </div>
+                <div class="module-purpose">Расширенные функции для работы со строками</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">antienter_str(string: str, space: bool = True) -> str</div>
+                        <div class="function-description">Удаляет переносы строк из текста</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">antispace(string: str) -> str</div>
+                        <div class="function-description">Удаляет все пробелы из строки</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">search_and_edit(text: str, input: str, output: str) -> str</div>
+                        <div class="function-description">Заменяет фрагменты в строке с учетом позиции</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">generate_rand_string(length: int = 25) -> str</div>
+                        <div class="function-description">Генерирует случайную строку указанной длины</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">only_pythonname(text: str) -> bool</div>
+                        <div class="function-description">Проверяет, содержит ли строка только допустимые символы для имен Python</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">remove_extra_spaces(text) -> str</div>
+                        <div class="function-description">Удаляет лишние пробелы из текста</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль resolution.py -->
+            <div class="module-card" data-filename="resolution">
+                <div class="module-header">
+                    <div class="module-name">🖥️ resolution.py</div>
+                </div>
+                <div class="module-purpose">Работа с разрешением экрана и мониторами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">get_resolution(monitor: int = 0, letter: str = '') -> Union[tuple[int, int], str]</div>
+                        <div class="function-description">Получает разрешение указанного монитора</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">get_primary_monitor_info()</div>
+                        <div class="function-description">Возвращает информацию об основном мониторе</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">resolution_function(**resolutions)</div>
+                        <div class="function-description">Выполняет функцию в зависимости от разрешения экрана</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">resolution_return(**resolutions)</div>
+                        <div class="function-description">Возвращает значение в зависимости от разрешения экрана</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">get_refresh_rate() -> int</div>
+                        <div class="function-description">Получает частоту обновления монитора (только Windows)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль system.py -->
+            <div class="module-card" data-filename="system">
+                <div class="module-header">
+                    <div class="module-name">💻 system.py</div>
+                </div>
+                <div class="module-purpose">Системные функции, работа с hosts-файлом</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">HostsFile</div>
+                        <div class="function-description">Класс для работы с системным файлом hosts</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> read_hosts(), add_host(), remove_host(), backup()
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль taskmgr.py -->
+            <div class="module-card" data-filename="taskmgr">
+                <div class="module-header">
+                    <div class="module-name">⚡ taskmgr.py</div>
+                </div>
+                <div class="module-purpose">Управление процессами системы</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">is_process_running(process_name) -> bool</div>
+                        <div class="function-description">Проверяет, запущен ли указанный процесс</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">kill_process_if_is_running(process_name, *args, **kwargs)</div>
+                        <div class="function-description">Завершает процесс, если он запущен</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль type_define.py -->
+            <div class="module-card" data-filename="type_define">
+                <div class="module-header">
+                    <div class="module-name">🔍 type_define.py</div>
+                </div>
+                <div class="module-purpose">Функции для определения и преобразования типов данных</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">TypeEdit</div>
+                        <div class="function-description">Класс для преобразования типов данных</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> string(), integer(), float(), boolean()
+                        </div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">is_int(data) -> bool</div>
+                        <div class="function-description">Проверяет, можно ли преобразовать данные в целое число</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">is_float(data) -> bool</div>
+                        <div class="function-description">Проверяет, можно ли преобразовать данные в число с плавающей точкой</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">isinstance_multi(obj, *types) -> bool</div>
+                        <div class="function-description">Проверяет принадлежность объекта к нескольким типам</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">issubclass_multi(obj, *classes) -> bool</div>
+                        <div class="function-description">Проверяет наследование класса от нескольких классов</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль windows_registry.py -->
+            <div class="module-card" data-filename="windows_registry">
+                <div class="module-header">
+                    <div class="module-name">🏢 windows_registry.py</div>
+                </div>
+                <div class="module-purpose">Работа с реестром Windows (только для Windows)</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">RegistryError</div>
+                        <div class="function-description">Исключение для ошибок работы с реестром</div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">remove_registry_keys(hive: str, *keys)</div>
+                        <div class="function-description">Удаляет ключи из реестра Windows</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">remove_registry_values(hive, subkey, *value_names)</div>
+                        <div class="function-description">Удаляет значения из указанного ключа реестра</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">remove_values_in_keys(hive, **value_names)</div>
+                        <div class="function-description">Удаляет значения из нескольких ключей реестра</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль constants.py-->
+            <div class="module-card" data-filename="constants">
+                <div class="module-header">
+                    <div class="module-name">📒 constants.py</div>
+                </div>
+                <div class="module-purpose">Разные полезные константы</div>
+
+                <div class="parameter-list">
+                    <div class="parameter-item">
+                        <div class="parameter-name">RGB</div>
+                        <div class="function-description">Все вариации цветов rgb</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <h2>📋 Общая информация о пакете</h2>
+            <div class="module-purpose">
+                <p><strong>Версия:</strong> <span class="highlight">2.0</span></p>
+                <p><strong>Автор:</strong> <span class="highlight">MagIlyas DOMA</span></p>
+                <p><strong>Лицензия:</strong> <span class="highlight">MIT</span></p>
+                <p id="plink">
+<!--                    <strong>Ссылки:</strong>-->
+                    <span class="highlight"><a href="https://github.com/MagIlyas-DOMA/hrenpack">GitHub</a></span>
+                    <span class="highlight"><a href="https://pypi.org/project/hrenpack/">PyPi</a></span>
+                </p>
+                <p>Пакет предоставляет набор утилитарных функций и классов для повседневных задач программирования на Python, включая работу с файлами, строками, типами данных и системные операции.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024-2025 MagIlyas DOMA</p>
+    </footer>
+
+    <script src="/hrenpack_js/cookie.js"></script>
+    <script src="/hrenpack-theme-style/script.js"></script>
+    
+    <script src="/hrenpack/documentation/sort.js"></script>
+    
+
+</body>
+</html>

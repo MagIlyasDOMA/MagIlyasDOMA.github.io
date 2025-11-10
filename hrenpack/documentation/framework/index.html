@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>None - Hrenpack</title>
+    <link rel="stylesheet" href="/hrenpack_js/hrenpack.css">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/hrenpack-theme-style/style.css" id="hrenpack-theme-stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="/hrenpack/documentation/style.css">
+	
+
+</head>
+<body>
+    <header class="panel">
+        <div class="panel__header">
+            <p></p>
+            <h1>🏗️ Документация Framework</h1>
+            <button class="btn btn-hren" id="hrenpack-toggle-theme">Изменить тему</button>
+        </div>
+        
+	<div class="version">Подпакет для работы с GUI и веб-фреймворками</div>
+    <div class="description">
+        Полная документация модулей для интеграции с различными фреймворками в пакете <a href="/hrenpack/documentation">Hrenpack</a>.
+    </div>
+
+    </header>
+    
+    <base href="/hrenpack/documentation/framework/">
+    <div class="container">
+        <div class="modules-grid">
+            <div class="module-card" data-filename="___subpackages">
+                <div class="module-header">
+                    <div class="module-name">📦 Субпакеты</div>
+                </div>
+                <ul class="module-list">
+                    <li><a href="django.html">django</a></li>
+                    <li>
+                        <details open>
+                            <summary><a href="kivy">kivy</a></summary>
+                            <ul class="module-list">
+                                <li><a href="kivy/widgets.html">widgets</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="pyside6.html">pyside6</a></li>
+                </ul>
+            </div>
+
+            <!-- Модуль pygame.py -->
+            <div class="module-card" data-filename="pygame">
+                <div class="module-header">
+                    <div class="module-name">🎮 pygame.py</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с фреймворком Pygame</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">Keyboard</div>
+                        <div class="function-description">Dataclass с константами клавиш клавиатуры для Pygame</div>
+                        <div class="parameters">
+                            <strong>Константы:</strong> A-Z, SPACE - коды клавиш клавиатуры
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">Image</div>
+                        <div class="function-description">Класс для работы с изображениями в Pygame</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> resize(), resize_and_convert_alpha(), quick_resize()
+                        </div>
+                    </div>
+                </div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">quit()</div>
+                        <div class="function-description">Завершает работу Pygame и выходит из программы</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">quit_if_quit(event)</div>
+                        <div class="function-description">Проверяет событие QUIT и завершает программу</div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <script src="/hrenpack_js/cookie.js"></script>
+    <script src="/hrenpack-theme-style/script.js"></script>
+    
+    <script src="/hrenpack/documentation/sort.js"></script>
+    
+
+</body>
+</html>

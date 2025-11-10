@@ -1,0 +1,8 @@
+#install-div {
+    display: flex;
+    justify-content: center;
+}
+
+pre {
+    width: fit-content;
+}

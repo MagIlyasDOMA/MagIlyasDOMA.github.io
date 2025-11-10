@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Документация Widgets - Kivy Hrenpack</title>
+    <link rel="stylesheet" href="/hrenpack_js/hrenpack.css">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/hrenpack-theme-style/style.css" id="hrenpack-theme-stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="/hrenpack/documentation/style.css">
+	
+
+</head>
+<body>
+    <header class="panel">
+        <div class="panel__header">
+            <p></p>
+            <h1>🧩 Документация Widgets</h1>
+            <button class="btn btn-hren" id="hrenpack-toggle-theme">Изменить тему</button>
+        </div>
+        
+	<div class="version">Субпакет виджетов для Kivy</div>
+    <div class="description">
+        Полная документация кастомных виджетов для фреймворка Kivy в пакете <a href="/hrenpack/documentation">Hrenpack</a>.
+        Включает расширенные версии стандартных виджетов и специализированные компоненты.
+    </div>
+
+    </header>
+    
+    <div class="container">
+        <div class="modules-grid">
+
+            <!-- Основной модуль __init__.py -->
+            <div class="module-card" data-filename="__init__">
+                <div class="module-header">
+                    <div class="module-name">📄 __init__.py</div>
+                </div>
+                <div class="module-purpose">Базовые кастомные виджеты Kivy</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">BoxLayout</div>
+                        <div class="function-description">Расширенный BoxLayout с упрощенным созданием и позиционированием</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> cofficient() - пропорциональное позиционирование виджетов
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">FloatLayout</div>
+                        <div class="function-description">Расширенный FloatLayout с автоматическим добавлением в родителя</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">Label</div>
+                        <div class="function-description">Расширенная метка с методом set_text()</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">Button</div>
+                        <div class="function-description">Расширенная кнопка с поддержкой команд через clicked_connect()</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">IconButton</div>
+                        <div class="function-description">Кнопка с иконкой и текстом</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">LoggingLabel</div>
+                        <div class="function-description">Метка для отображения статусов с цветовым кодированием</div>
+                        <div class="parameters">
+                            <strong>Статусы:</strong> success, warning, error с автоматическим отключением виджетов
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">Image</div>
+                        <div class="function-description">Базовый виджет изображения</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль box.py -->
+            <div class="module-card" data-filename="box">
+                <div class="module-header">
+                    <div class="module-name">📦 box.py</div>
+                </div>
+                <div class="module-purpose">Виджеты-контейнеры с дополнительной функциональностью</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">BoxLabel</div>
+                        <div class="function-description">Композитный виджет - Label внутри BoxLayout</div>
+                        <div class="parameters">
+                            <strong>Параметры:</strong> Отдельные kwargs для layout и label
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль double.py -->
+            <div class="module-card" data-filename="double">
+                <div class="module-header">
+                    <div class="module-name">🔄 double.py</div>
+                </div>
+                <div class="module-purpose">Составные и переключаемые виджеты</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">TextCheckBox</div>
+                        <div class="function-description">Чекбокс с текстовой меткой</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> is_selected(), set_selected()
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">DoubleWidget</div>
+                        <div class="function-description">Контейнер для переключения между двумя виджетами</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> switch(), switch1(), switch2()
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль dynamic.py -->
+            <div class="module-card" data-filename="dynamic">
+                <div class="module-header">
+                    <div class="module-name">📏 dynamic.py</div>
+                </div>
+                <div class="module-purpose">Виджеты с адаптивным размером</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">DynamicLabel</div>
+                        <div class="function-description">Метка с динамическим размером шрифта</div>
+                        <div class="parameters">
+                            <strong>Особенность:</strong> Автоматически подстраивается под размер окна
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль font_percent.py -->
+            <div class="module-card" data-filename="font_percent">
+                <div class="module-header">
+                    <div class="module-name">🔠 font_percent.py</div>
+                </div>
+                <div class="module-purpose">Виджеты с процентным размером шрифта</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">FontPercentLabel</div>
+                        <div class="function-description">Метка с размером шрифта в процентах от ширины окна</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">FontPercentButton</div>
+                        <div class="function-description">Кнопка с размером шрифта в процентах от ширины окна</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль input.py -->
+            <div class="module-card" data-filename="input">
+                <div class="module-header">
+                    <div class="module-name">⌨️ input.py</div>
+                </div>
+                <div class="module-purpose">Виджеты ввода и выбора</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">ComboBox</div>
+                        <div class="function-description">Расширенный выпадающий список</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> append(), index(), get_selected(), set_selected()
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">CustomBackgroundComboBox</div>
+                        <div class="function-description">ComboBox с кастомным фоном (в разработке)</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">ToggleButtonGroup</div>
+                        <div class="function-description">Группа переключаемых кнопок</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> connect(), get_selected(), set_selected()
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">ToggleButton</div>
+                        <div class="function-description">Кнопка-переключатель с поддержкой групп</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">CheckBox</div>
+                        <div class="function-description">Расширенный чекбокс</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> is_selected(), set_selected()
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">TextInput</div>
+                        <div class="function-description">Расширенное поле ввода текста</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong> get_text(), set_text(), connect()
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль multi_screen_mode.py -->
+            <div class="module-card" data-filename="multi_screen_mode">
+                <div class="module-header">
+                    <div class="module-name">🖥️ multi_screen_mode.py</div>
+                </div>
+                <div class="module-purpose">Абстрактные классы для многозкранного режима</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">MultiScreenModeBoxLayout</div>
+                        <div class="function-description">Абстрактный BoxLayout для многозкранных приложений</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">MultiScreenModeFloatLayout</div>
+                        <div class="function-description">Абстрактный FloatLayout для многозкранных приложений</div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">MultiScreenModeScreen</div>
+                        <div class="function-description">Абстрактный экран для многозкранных приложений</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль views.py -->
+            <div class="module-card" data-filename="views">
+                <div class="module-header">
+                    <div class="module-name">📜 views.py</div>
+                </div>
+                <div class="module-purpose">Виджеты для отображения контента</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">ScrollView</div>
+                        <div class="function-description">Расширенная прокручиваемая область</div>
+                        <div class="parameters">
+                            <strong>Особенность:</strong> По умолчанию отключена горизонтальная прокрутка
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header">
+            <h2>🎯 Основные возможности Widgets-пакета</h2>
+            <div class="module-purpose">
+                <p><strong>Упрощенное создание виджетов:</strong> Автоматическое добавление в родительские контейнеры</p>
+                <p><strong>Расширенные методы управления:</strong> Дополнительные методы для работы с состоянием виджетов</p>
+                <p><strong>Адаптивный дизайн:</strong> Виджеты с автоматической подстройкой под размер экрана</p>
+                <p><strong>Композитные компоненты:</strong> Готовые комбинации виджетов для типовых задач</p>
+                <p><strong>Улучшенные элементы ввода:</strong> Расширенные версии стандартных виджетов ввода</p>
+                <p><strong>Поддержка многозкранности:</strong> Абстрактные классы для создания сложных интерфейсов</p>
+                <p><strong>Группировка элементов:</strong> Управление группами переключателей и кнопок</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/hrenpack_js/cookie.js"></script>
+    <script src="/hrenpack-theme-style/script.js"></script>
+    
+    <script src="/hrenpack/documentation/sort.js"></script>
+    
+
+</body>
+</html>
