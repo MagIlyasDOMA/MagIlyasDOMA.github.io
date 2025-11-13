@@ -12,3 +12,7 @@
     --step-bar-active-label-color: #c000c0;
     --step-bar-completed-label-color: #222;
 }
+
+click-to-copy {
+    cursor: pointer;
+}

@@ -514,6 +514,19 @@ class HTMLFile extends HTMLElement {
 }
 
 
+class ClickToCopy extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        this.addEventListener('click', () => {
+            navigator.clipboard.writeText(this.textContent);
+        });
+    }
+}
+
+
 customElements.define('sb-element', StepElement);
 customElements.define('step-bar', Stepbar);
 customElements.define('main-content', MainContent);
@@ -521,4 +534,5 @@ customElements.define('indent-container', Container);
 customElements.define('message-box', MessageBox);
 customElements.define('ab-num', AbbreviatedNumber)
 customElements.define('include-html', HTMLFile);
+customElements.define('click-to-copy', ClickToCopy)
 connectBaseCSS()
