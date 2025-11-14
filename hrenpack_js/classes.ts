@@ -1,10 +1,5 @@
 class ClickableLinksFactory {
-    static readonly defaultURLRejex = /(https?:\/\/[^\s]+)/g;
-    private urlRegex: RegExp;
-
-    constructor(urlRegex: RegExp | null = null) {
-        this.urlRegex = urlRegex ? urlRegex : ClickableLinksFactory.defaultURLRejex
-    }
+    private readonly urlRegex = /(https?:\/\/[^\s]+)/g;
 
     private walk(node: Node, isClickToCopy: boolean) {
         if (node.nodeType === Node.TEXT_NODE) {

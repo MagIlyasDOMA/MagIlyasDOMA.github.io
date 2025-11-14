@@ -1,4 +1,8 @@
+const url_params = new URLSearchParams(window.location.search)
 const table = document.querySelector('table').querySelector('tbody');
+
+if (url_params.get('type') !== 'browsing')
+    location.replace('/hrenpack_js/res/hrenpack.js')
 
 fetch('/hrenpack_js/res/files.json')
     .then(response => {

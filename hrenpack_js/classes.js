@@ -1,7 +1,6 @@
 var ClickableLinksFactory = /** @class */ (function () {
-    function ClickableLinksFactory(urlRegex) {
-        if (urlRegex === void 0) { urlRegex = null; }
-        this.urlRegex = urlRegex ? urlRegex : ClickableLinksFactory.defaultURLRejex;
+    function ClickableLinksFactory() {
+        this.urlRegex = /(https?:\/\/[^\s]+)/g;
     }
     ClickableLinksFactory.prototype.walk = function (node, isClickToCopy) {
         var _this = this;
@@ -46,6 +45,5 @@ var ClickableLinksFactory = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    ClickableLinksFactory.defaultURLRejex = /(https?:\/\/[^\s]+)/g;
     return ClickableLinksFactory;
 }());
