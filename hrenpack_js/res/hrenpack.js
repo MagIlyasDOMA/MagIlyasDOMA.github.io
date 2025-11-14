@@ -2,8 +2,9 @@ const stylesRoot = getComputedStyle(document.documentElement);
 
 
 var ClickableLinksFactory = /** @class */ (function () {
-    function ClickableLinksFactory() {
-        this.urlRegex = /(https?:\/\/[^\s]+)/g;
+    function ClickableLinksFactory(urlRegex) {
+        if (urlRegex === void 0) { urlRegex = null; }
+        this.urlRegex = urlRegex ? urlRegex : ClickableLinksFactory.defaultURLRejex;
     }
     ClickableLinksFactory.prototype.walk = function (node, isClickToCopy) {
         var _this = this;
@@ -48,6 +49,7 @@ var ClickableLinksFactory = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    ClickableLinksFactory.defaultURLRejex = /(https?:\/\/[^\s]+)/g;
     return ClickableLinksFactory;
 }());
 
