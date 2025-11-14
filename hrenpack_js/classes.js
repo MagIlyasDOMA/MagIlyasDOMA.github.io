@@ -1,48 +1,51 @@
-"use strict";
-class ClickableLinksFactory {
-    constructor(urlRegex = null) {
+var ClickableLinksFactory = /** @class */ (function () {
+    function ClickableLinksFactory(urlRegex) {
+        if (urlRegex === void 0) { urlRegex = null; }
         this.urlRegex = urlRegex ? urlRegex : ClickableLinksFactory.defaultURLRejex;
     }
-    walk(node, isClickToCopy) {
+    ClickableLinksFactory.prototype.walk = function (node, isClickToCopy) {
+        var _this = this;
         if (node.nodeType === Node.TEXT_NODE) {
-            const text = node.textContent ? node.textContent : '';
-            const func = isClickToCopy ? this.get_clickToCopy : this.get_anchor;
+            var text = node.textContent;
+            var func_1 = isClickToCopy ? this.get_clickToCopy : this.get_anchor;
             if (this.urlRegex.test(text)) {
-                const parent = node.parentNode;
-                const newContent = text.replace(this.urlRegex, url => {
-                    return func(url);
+                var parent_1 = node.parentNode;
+                var newContent = text.replace(this.urlRegex, function (url) {
+                    return func_1(url);
                 });
-                if (!parent)
-                    return;
-                const tempDiv = document.createElement('div');
+                var tempDiv = document.createElement('div');
                 tempDiv.innerHTML = newContent;
                 while (tempDiv.firstChild) {
-                    parent.insertBefore(tempDiv.firstChild, node);
+                    parent_1.insertBefore(tempDiv.firstChild, node);
                 }
-                parent.removeChild(node);
+                parent_1.removeChild(node);
             }
         }
         else {
-            node.childNodes.forEach(child => {
-                this.walk(child, isClickToCopy);
+            node.childNodes.forEach(function (child) {
+                _this.walk(child, isClickToCopy);
             });
         }
-    }
-    get_anchor(url) {
-        return `<a href="${url}" target="_blank" rel="noopener noreferrer" data-clf-generated>${url}</a>`;
-    }
-    get_clickToCopy(url) {
-        return `<click-to-copy data-clf-generated>${url}</click-to-copy>`;
-    }
-    clickableLinks(element) {
+    };
+    ClickableLinksFactory.prototype.get_anchor = function (url) {
+        return "<a href=\"".concat(url, "\" target=\"_blank\" rel=\"noopener noreferrer\" data-clf-generated>").concat(url, "</a>");
+    };
+    ClickableLinksFactory.prototype.get_clickToCopy = function (url) {
+        return "<click-to-copy data-clf-generated>".concat(url, "</click-to-copy>");
+    };
+    ClickableLinksFactory.prototype.clickableLinks = function (element) {
         this.walk(element, false);
-    }
-    clickToCopyLinks(element) {
+    };
+    ClickableLinksFactory.prototype.clickToCopyLinks = function (element) {
         this.walk(element, true);
-    }
-    get generatedElements() {
-        return document.querySelectorAll('[data-clf-generated]');
-    }
-}
-ClickableLinksFactory.defaultURLRejex = /(https?:\/\/[^\s]+)/g;
-//# sourceMappingURL=classes.js.map
+    };
+    Object.defineProperty(ClickableLinksFactory.prototype, "generatedElements", {
+        get: function () {
+            return document.querySelectorAll('[data-clf-generated]');
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ClickableLinksFactory.defaultURLRejex = /(https?:\/\/[^\s]+)/g;
+    return ClickableLinksFactory;
+}());

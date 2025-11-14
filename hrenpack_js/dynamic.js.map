@@ -1,1 +1,0 @@
-{"version":3,"file":"dynamic.js","sourceRoot":"","sources":["../src/dynamic.ts"],"names":[],"mappings":";AAAA,SAAS,cAAc,CAAC,aAA+B;IACnD,MAAM,YAAY,GAAG,aAAa,CAAC,YAAY,CAAC,MAAM,CAAC,KAAK,UAAU,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,UAAU,CAAC;IAC7F,aAAa,CAAC,YAAY,CAAC,MAAM,EAAE,YAAY,CAAC,CAAC;AACrD,CAAC"}
