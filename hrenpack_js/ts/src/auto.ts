@@ -1,0 +1,1 @@
+const stylesRoot: CSSStyleDeclaration = getComputedStyle(document.documentElement);
