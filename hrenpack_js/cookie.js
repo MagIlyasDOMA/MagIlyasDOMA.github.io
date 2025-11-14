@@ -1,30 +1,32 @@
 function getCookie(name) {
-    const nameEQ = `${name}=`;
-    const cookiesArray = document.cookie.split(';'); // разбиваем строку cookie на массив
+    const cookies = document.cookie;
+    if (!cookies)
+        return null;
+    const cookiesArray = cookies.split(';');
     for (let i = 0; i < cookiesArray.length; i++) {
-        let cookie = cookiesArray[i].trim(); // удаляем пробелы
-        if (cookie.indexOf(nameEQ) === 0) {
-            return cookie.substring(nameEQ.length, cookie.length); // возвращаем значение cookie
+        const raw = cookiesArray[i];
+        if (raw === undefined)
+            continue; // <-- защита от undefined
+        const cookie = raw.trim();
+        if (cookie.indexOf(name + '=') === 0) {
+            return decodeURIComponent(cookie.substring(name.length + 1));
         }
     }
-    return null; // если cookie не найден, возвращаем null
+    return null;
 }
-
-
-function setCookie(name, value, days= null, path = '/') {
+function setCookie(name, value, days = null, path = '/') {
     let expires = '';
-    if (days === 'forever') {
+    if (days == null)
         expires = '; expires=Fri, 31 Dec 9999 23:59:59 GMT'; // форматируем дату
-    } else if (days) {
+    else {
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // преобразуем дни в миллисекунды
         expires = `; expires=${date.toUTCString()}`;
     }
     document.cookie = `${name}=${value || ''}${expires}; path=${path}`; // установка cookie
 }
-
-
 function hasCookie(name) {
-    return getCookie(name) == null;
+    return getCookie(name) != null;
 }
-
+export {};
+//# sourceMappingURL=cookie.js.map
