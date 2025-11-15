@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /hrenpack_js/$
+Allow: /hrenpack_js/

@@ -1,13 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--Generated with https://sitemap-xml.ru-->
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
-  <url>
-    <loc>https://magilyasdoma.github.io/</loc>
-  </url>
-  <url>
-    <loc>https://magilyasdoma.github.io/hrenpack/documentation.html</loc>
-  </url>
-  <url>
-    <loc>https://magilyasdoma.github.io/hrenpack_js/documentation.html</loc>
-  </url>
+<?xml version="1.0" encoding="UTF-8">
+<urlset>
+    <url>
+        <loc>https://magilyasdoma.github.io/</loc>
+        <lastmod>2025-11-06T20:50:22+03:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/</loc>
+        <lastmod>2025-11-09T21:26:03+03:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack-theme-style/</loc>
+        <lastmod>2025-11-11T16:38:54+03:00</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack_js/documentation.html</loc>
+        <lastmod>2025-11-12T17:28:23+03:00</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack_js/install.html</loc>
+        <lastmod>2025-11-14T12:19:27+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/filework.html</loc>
+        <lastmod>2025-11-03T20:31:08+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/</loc>
+        <lastmod>2025-11-03T20:30:34+03:00</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/framework/django.html</loc>
+        <lastmod>2025-11-03T20:54:10+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/framework/</loc>
+        <lastmod>2025-11-03T20:54:23+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/framework/pyside6.html</loc>
+        <lastmod>2025-11-03T20:54:15+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/framework/kivy</loc>
+        <lastmod>2025-11-03T21:48:21+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://magilyasdoma.github.io/hrenpack/documentation/framework/kivy/widgets.html</loc>
+        <lastmod>2025-11-03T21:57:18+03:00</lastmod>
+        <priority>0.6</priority>
+    </url>
 </urlset>
