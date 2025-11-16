@@ -114,12 +114,6 @@ function hasCookie(name) {
 
 
 
-function togglePassword(passwordInput) {
-    const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', passwordType);
-}
-
-
 class NotAuthorizedError extends Error {
     constructor() {
         super("Пользователь не авторизован");
@@ -988,11 +982,26 @@ class HTMLFile extends HTMLElement {
 class ClickToCopy extends HTMLElement {
     constructor() {
         super();
+        this.notification = new HyperTextNotification({backgroundColor: 'rgba(192,0,192,0.8)'})
+        this.notificationText = "Текст скопирован"
+    }
+
+    get isNotified() {
+        return this.hasAttribute('notified')
+    }
+
+    set isNotified(value) {
+        if (value)
+            this.setAttribute('notified', '')
+        else
+            this.removeAttribute('notified')
     }
 
     connectedCallback() {
         this.addEventListener('click', () => {
             navigator.clipboard.writeText(this.textContent);
+            if (this.isNotified)
+                this.notification.show(this.notificationText)
         });
     }
 }
