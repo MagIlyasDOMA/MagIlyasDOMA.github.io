@@ -518,7 +518,17 @@ class ClickToCopy extends HTMLElement {
     constructor() {
         super();
         this.notification = new HyperTextNotification({backgroundColor: 'rgba(192,0,192,0.8)'})
-        this.notificationText = "Текст скопирован"
+    }
+
+    get notificationText() {
+        return this.hasAttribute('text') ? this.getAttribute('text') : "Скопировано"
+    }
+
+    set notificationText(value) {
+        if (value)
+            this.setAttribute('text', value)
+        else
+            this.removeAttribute('text')
     }
 
     get isNotified() {
