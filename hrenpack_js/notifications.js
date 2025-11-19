@@ -1,25 +1,66 @@
-function pushNotification(title= "Уведомление", body = "Текст уведомления", icon = null) {
+"use strict";
+function pushNotification(title = "Уведомление", body = "Текст уведомления", icon = null) {
     if (Notification.permission !== "granted") {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
-                new Notification(title, {
-                    body: body,
-                    icon: icon // Опционально: иконка уведомления
-                });
+                if (icon)
+                    new Notification(title, { body: body, icon: icon });
+                else
+                    new Notification(title, { body: body });
             }
         });
-    } else {
-        new Notification(title, {
-            body: body,
-            icon: icon // Опционально: иконка уведомления
-        });
+    }
+    else {
+        if (icon)
+            new Notification(title, { body: body, icon: icon });
+        else
+            new Notification(title, { body: body });
     }
 }
-
-
 class HyperTextNotification {
-    constructor({ bottom = '20', right = '20', backgroundColor = '#121212',
-                    color = '#ededed', padding = '15', borderRadius = '5', timeout = 3 } = {}) {
+    constructor({ bottom = '20', right = '20', backgroundColor = '#121212', color = '#ededed', padding = '15', borderRadius = '5', timeout = 3 } = {}) {
+        Object.defineProperty(this, "bottom", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "right", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "backgroundColor", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "color", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "padding", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "borderRadius", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "timeout", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
         this.bottom = intToPixel(bottom);
         this.right = intToPixel(right);
         this.backgroundColor = backgroundColor;
@@ -28,8 +69,7 @@ class HyperTextNotification {
         this.borderRadius = intToPixel(borderRadius);
         this.timeout = timeout;
     }
-
-    show(message, timeout= 0) {
+    show(message, timeout = 0) {
         const notification = document.createElement("div");
         notification.textContent = message;
         notification.style.position = "fixed";
@@ -40,12 +80,13 @@ class HyperTextNotification {
         notification.style.padding = this.padding;
         notification.style.borderRadius = this.borderRadius;
         notification.style.zIndex = "1000";
-        timeout = timeout === 0 ? this.timeout : timeout
+        const actualTimeout = timeout === 0 ? this.timeout : timeout;
         document.body.appendChild(notification);
-
-        // Удаляем уведомление через 3 секунды
         setTimeout(() => {
-            document.body.removeChild(notification);
-        }, timeout * 1000);
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
+        }, actualTimeout * 1000);
     }
 }
+//# sourceMappingURL=notifications.js.map

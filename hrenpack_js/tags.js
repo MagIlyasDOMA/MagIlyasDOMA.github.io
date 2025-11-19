@@ -1,172 +1,46 @@
-const protectedAttributes = new WeakMap()
-
-
-function connectBaseCSS() {
-    const link = document.createElement('link');
-    const currentScript = document.currentScript;
-    const referenceNode = document.head.querySelector('meta:last-of-type') || document.head.querySelector('title');
-    link.rel = 'stylesheet';
-    if (currentScript && currentScript.src)
-        link.href = currentScript.src.substring(0, currentScript.src.lastIndexOf('/') + 1) + 'hrenpack.css'
-    else
-        throw new Error("hrenpack.css не подключен")
-        const firstStyleOrLink = document.head.querySelector('link, style');
-    if (firstStyleOrLink)
-        document.head.insertBefore(link, firstStyleOrLink);
-    else {
-        if (referenceNode)
-            referenceNode.parentNode.insertBefore(link, referenceNode.nextSibling);
-        else
-            document.head.appendChild(link);
-    }
-}
-
-
-class MainContent extends HTMLElement {
-    static get observedAttributes() {
-        return ['use_wrapper']
-    }
-
-    constructor() {
-        super();
-        this.wrapper = document.createElement('div');
-        this.wrapper.style.cssText = 'display: flex;\n' +
-                '            flex-direction: column;\n' +
-                '            min-height: 100vh;\n' +
-                '            width: 100%;\n' +
-                '            height: 100%;';
-        this.main = document.createElement('main');
-        this.main.style.cssText = 'flex: 1;\n' +
-            '            padding: 20px;\n' +
-            '            width: 100%;\n' +
-            '            height: 100%;\n';
-        this.render();
-    }
-
-    render() {
-        this.main.innerHTML = this.innerHTML;
-        this.innerHTML = '';
-        // Если атрибут use_wrapper присутствует, добавляем обертку
-        if (this.hasAttribute('use_wrapper')) {
-            this.wrapper.appendChild(this.main);
-            this.appendChild(this.wrapper);
-        } else {
-            this.appendChild(this.main);
-        }
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (name === 'use_wrapper') {
-            this.render(); // Перерендериваем при изменении атрибута
-        }
-    }
-}
-
-
-class Container extends HTMLElement {
-    static get observedAttributes() {
-        return ['left', 'top', 'right', 'bottom', 'all']
-    }
-
-    formatAttr(name) {
-        if (this.hasAttribute(name))
-            return '0';
-        let attr = this.getAttribute(name)
-        if (!isNaN(attr) && parseInt(attr) !== 0)
-            attr += 'px'
-        return attr
-    }
-
-    constructor() {
-        super();
-        this.style.marginLeft = this.formatAttr('left')
-        this.style.marginRight = this.formatAttr('right')
-        this.style.marginTop = this.formatAttr('top')
-        this.style.marginBottom = this.formatAttr('bottom')
-    }
-}
-
-
-/*
-class Crutch extends HTMLElement{
-    constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: 'open' });
-        const paragraph = document.createElement('p');
-        paragraph.style.color = 'transparent';
-        paragraph.innerHTML = '.';
-        shadow.appendChild(paragraph);
-    }
-}
-*/
-
-
-class PasswordInput extends HTMLElement {
-    constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: 'open' })
-        const input = document.createElement('input')
-        const button = document.createElement('button')
-        input.type = 'password'
-    }
-}
-
-class MessageBox extends HTMLElement {
-    static get observedAttributes() {
-        return ['background', 'color']
-    }
-
-    constructor() {
-        super();
-        const shadow = this.attachShadow({mode: 'open'});
-        this.div = document.createElement('div');
-        this.div.style.cssText = 'width: 100%;\n' +
-            'padding: 100px 0;\n' +
-            'text-align: center;';
-        this.render();
-    }
-
-    render() {
-        const background = this.getAttribute('background') || 'red'
-        const color = this.getAttribute('color') || '#ededed'
-        this.div.style.background = background
-        this.div.style.color = color
-        this.div.innerHTML = this.innerHTML
-    }
-}
-
-
+"use strict";
+const protectedAttributes = new WeakMap();
 class AbbreviatedNumber extends HTMLElement {
     constructor() {
         super();
+        Object.defineProperty(this, "isShortened", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "originalNumber", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
         this.isShortened = true;
-        this.originalNumber = this.textContent.trim();
+        this.originalNumber = parseFloat(this.textContent?.trim() || '0');
         this.render();
         this.addEventListener('click', this.toggle.bind(this));
+        if (isNaN(this.originalNumber))
+            throw new TypeError('The value must be a number');
     }
-
     toggle() {
         this.isShortened = !this.isShortened;
         this.render();
     }
-
     getCurrentLang() {
         return this.getAttribute('lang') || document.documentElement.getAttribute('lang') || 'en';
     }
-
     formatNumber(num, lang) {
         num = parseFloat(num.toString().replace(/[^\d.-]/g, ''));
-        if (isNaN(num)) return this.originalNumber;
-
+        if (isNaN(num))
+            return this.originalNumber.toString();
         const useComma = this.hasAttribute('use_comma');
         const separator = useComma ? ',' : '.';
-
         const round = (value, digits) => {
-            if (digits === 0) return Math.round(value);
+            if (digits === 0)
+                return Math.round(value);
             const factor = Math.pow(10, digits);
             return Math.round(value * factor) / factor;
         };
-
         const format = (value, digits) => {
             const rounded = round(value, digits);
             // Убираем лишние нули в дробной части
@@ -176,13 +50,13 @@ class AbbreviatedNumber extends HTMLElement {
             }
             return str.replace('.', separator);
         };
-
         const getFractionDigits = (value) => {
-            if (value < 10) return 2;
-            if (value < 100) return 1;
+            if (value < 10)
+                return 2;
+            if (value < 100)
+                return 1;
             return 0;
         };
-
         if (lang.startsWith('ru')) {
             if (num >= 1000000000000) {
                 const value = num / 1000000000000;
@@ -221,261 +95,198 @@ class AbbreviatedNumber extends HTMLElement {
         }
         return format(num, 0);
     }
-
     render() {
         const lang = this.getCurrentLang();
         this.textContent = this.isShortened
             ? this.formatNumber(this.originalNumber, lang)
-            : this.originalNumber;
+            : this.originalNumber.toString();
     }
 }
-
-
 class StepElement extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({mode: 'open'});
+        this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-            <style>
-                :host {
-                    display: inline-flex;
-                    flex-direction: column;
-                    align-items: center;
-                    z-index: 3;
-                    flex: 1;
-                }
-                .step-circle {
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 50%;
-                    background: var(--step-bar-circle-bg);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: var(--step-bar-circle-active-color);
-                    font-weight: bold;
-                    margin-bottom: 8px;
-                    border: 3px solid var(--step-bar-circle-border-color);
-                    transition: all 0.3s ease;
-                }
-                .step-label {
-                    font-size: 14px;
-                    color: var(--step-bar-label-color);
-                }
-                :host([completed]) .step-circle {
-                    background: var(--step-bar-circle-completed-bg);
-                    border: 3px solid var(--step-bar-circle-border-completed-color);
-                    color: var(--step-bar-circle-completed-color);
-                }
-                :host([active]) .step-circle {
-                    background: var(--step-bar-circle-active-bg);
-                    border: 3px solid var(--step-bar-circle-border-active-color);
-                    color: var(--step-bar-circle-active-color);
-                }
-                :host([completed]) .step-label {
-                    color: var(--step-bar-completed-label-color);
-                    font-weight: bold;
-                }
-                :host([active]) .step-label {
-                    color: var(--step-bar-active-label-color);
-                }
-            </style>
-            <div class="step-circle"></div>
-            <div class="step-label"><slot></slot></div>
+            <div data-sb-generated="circle"></div>
+            <div data-sb-generated="label"><slot></slot></div>
         `;
     }
-
     static get observedAttributes() {
-        return ['active', 'completed', 'href']
+        return ['active', 'completed', 'href'];
     }
-
     get index() {
         return Array.from(this.parentNode.children).indexOf(this) + 1;
     }
-
     get active() {
-        return this.hasAttribute('active')
+        return this.hasAttribute('active');
     }
-
     set active(force) {
-        this.toggleAttribute('active', force)
+        this.toggleAttribute('active', force);
     }
-
     get completed() {
-        return this.hasAttribute('completed')
+        return this.hasAttribute('completed');
     }
-
     set completed(force) {
-        this.toggleAttribute('completed', force)
+        this.toggleAttribute('completed', force);
     }
-
     reset() {
         this.active = false;
         this.completed = false;
     }
-
+    get status() {
+        if (this.active)
+            return 'active';
+        else if (this.completed)
+            return 'complete';
+        else
+            return 'uncomplete';
+    }
+    set status(value) {
+        this.reset();
+        switch (value) {
+            case 'complete':
+                this.completed = true;
+                break;
+            case 'active':
+                this.active = true;
+                break;
+            case 'uncomplete':
+                break;
+            default:
+                throw new TypeError(`Unknown status: ${value}`);
+        }
+    }
     connectedCallback() {
-        this.shadowRoot.querySelector('.step-circle').textContent = this.index;
-        const currentStep = this.parentElement.currentStep
-        console.log(this.index + ' ' + currentStep)
+        this.shadowRoot.querySelector('[data-sb-generated="circle"]').textContent = this.index.toString();
+        const parent = this.parentElement;
+        const currentStep = parent.currentStep || 1;
+        console.log(this.index + ' ' + currentStep);
         if (this.index === currentStep)
             this.active = true;
         else if (this.index < currentStep)
             this.completed = true;
     }
 }
-
 class Stepbar extends HTMLElement {
     constructor() {
         super();
-
-        // Глобальные стили
-        if (!document.querySelector('style[data-stepbar-styles]')) {
-            const style = document.createElement('style');
-            style.setAttribute('data-stepbar-styles', '');
-            style.textContent = `
-                stepbar {
-                    display: flex;
-                    width: 100%;
-                    max-width: 800px;
-                    margin: 40px auto;
-                    position: relative;
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
-        this.attachShadow({mode: 'open'});
+        Object.defineProperty(this, "_observer", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
+            <div class="stepbar-progress"></div>
             <slot></slot>
         `;
     }
-
     static get observedAttributes() {
         return ['current'];
     }
-
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'current') {
             this.updateSteps();
         }
     }
-
     connectedCallback() {
         if (!this._observer) {
             this._observer = new MutationObserver(() => this.updateSteps());
-            this._observer.observe(this, {childList: true});
+            this._observer.observe(this, { childList: true });
         }
         this.updateSteps();
     }
-
     disconnectedCallback() {
         if (this._observer) {
             this._observer.disconnect();
         }
     }
-
     updateSteps() {
-        const currentStep = parseInt(this.getAttribute('current')) || 1;
-        const progress = this.shadowRoot.querySelector('.stepbar-progress');
-        const elements = Array.from(this.children).filter(el => el.tagName === 'SB-ELEMENT');
-
+        const currentStep = parseInt(this.getAttribute('current') || '1');
+        // const progress = this.shadowRoot!.querySelector('.stepbar-progress') as HTMLElement;
+        const elements = Array.from(this.children).filter((el) => el.tagName === 'SB-ELEMENT');
         elements.forEach((element, index) => {
             const stepNumber = index + 1;
-            element.reset();
-
+            element.status = 'uncomplete';
             if (stepNumber < currentStep) {
-                element.completed = true;
-            } else if (stepNumber === currentStep) {
-                element.active = true;
+                element.status = 'complete';
+            }
+            else if (stepNumber === currentStep) {
+                element.status = 'active';
             }
         });
-
-        if (elements.length > 1) {
+        /*if (elements.length > 1 && progress) {
             const progressPercent = ((currentStep - 1) / (elements.length - 1)) * 100;
             progress.style.width = `${progressPercent}%`;
-        }
+        }*/
     }
-
     get currentStep() {
-        return this.getAttribute('current')
+        return parseInt(this.getAttribute('current') || '1');
     }
-
     set currentStep(step) {
-        this.setAttribute('current', step);
-        return this;
+        this.setAttribute('current', step.toString());
     }
 }
-
-
 class HTMLFile extends HTMLElement {
     constructor() {
         super();
     }
-
     // Getter для src
     get src() {
-        return this.getAttribute('src');
+        return this.getAttribute('src') || '';
     }
-
     // Setter для src
     set src(value) {
         if (value) {
             this.setAttribute('src', value);
-        } else {
+        }
+        else {
             this.removeAttribute('src');
         }
     }
-
     static get observedAttributes() {
         return ['src'];
     }
-
     connectedCallback() {
         this.loadContent();
     }
-
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'src' && oldValue !== newValue && this.isConnected) {
             this.loadContent();
         }
     }
-
     async loadContent() {
         const src = this.src;
-        if (!src) return;
-
+        if (!src)
+            return;
         try {
             const response = await fetch(src);
             const content = await response.text();
-
             // Вставляем HTML
             this.innerHTML = content;
-
             // Принудительно выполняем скрипты
             await this.executeScripts();
-
-        } catch (error) {
+        }
+        catch (error) {
             this.innerHTML = `Ошибка загрузки: ${error.message}`;
         }
     }
-
     async executeScripts() {
         const scripts = this.querySelectorAll('script');
-
         for (const script of scripts) {
             if (script.src) {
                 // Внешний скрипт
                 await this.loadExternalScript(script.src);
-            } else {
+            }
+            else {
                 // Inline скрипт
-                this.executeInlineScript(script.textContent);
+                this.executeInlineScript(script.textContent || '');
             }
             // Удаляем оригинальный script тег
             script.remove();
         }
     }
-
     loadExternalScript(src) {
         return new Promise((resolve, reject) => {
             const newScript = document.createElement('script');
@@ -485,79 +296,70 @@ class HTMLFile extends HTMLElement {
             document.head.appendChild(newScript);
         });
     }
-
     executeInlineScript(code) {
         try {
             const newScript = document.createElement('script');
             newScript.textContent = code;
             document.head.appendChild(newScript);
             document.head.removeChild(newScript);
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Ошибка выполнения скрипта:', error);
         }
     }
-
     // Getter для проверки загрузки
     get loaded() {
         return this.hasAttribute('data-loaded');
     }
-
     // Метод для перезагрузки
     reload() {
         return this.loadContent();
     }
-
     // Getter для содержимого
     get content() {
         return this.innerHTML;
     }
 }
-
-
 class ClickToCopy extends HTMLElement {
     constructor() {
         super();
-        this.notification = new HyperTextNotification({backgroundColor: 'rgba(192,0,192,0.8)'})
+        Object.defineProperty(this, "notification", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        this.notification = new HyperTextNotification({ backgroundColor: 'rgba(192,0,192,0.8)' });
     }
-
     get notificationText() {
-        return this.hasAttribute('text') ? this.getAttribute('text') : "Скопировано"
+        return this.getAttribute('text') || "Скопировано";
     }
-
     set notificationText(value) {
         if (value)
-            this.setAttribute('text', value)
+            this.setAttribute('text', value);
         else
-            this.removeAttribute('text')
+            this.removeAttribute('text');
     }
-
     get isNotified() {
-        return this.hasAttribute('notified')
+        return this.hasAttribute('notified');
     }
-
     set isNotified(value) {
         if (value)
-            this.setAttribute('notified', '')
+            this.setAttribute('notified', '');
         else
-            this.removeAttribute('notified')
+            this.removeAttribute('notified');
     }
-
     connectedCallback() {
         this.addEventListener('click', () => {
-            navigator.clipboard.writeText(this.textContent);
+            navigator.clipboard.writeText(this.textContent || '');
             if (this.isNotified)
-                this.notification.show(this.notificationText)
+                this.notification.show(this.notificationText);
         });
     }
 }
-
-
 customElements.define('sb-element', StepElement);
 customElements.define('step-bar', Stepbar);
-customElements.define('main-content', MainContent);
-customElements.define('indent-container', Container);
-customElements.define('message-box', MessageBox);
-customElements.define('ab-num', AbbreviatedNumber)
+customElements.define('ab-num', AbbreviatedNumber);
 customElements.define('include-html', HTMLFile);
-customElements.define('click-to-copy', ClickToCopy)
-connectBaseCSS()
+customElements.define('click-to-copy', ClickToCopy);
+//# sourceMappingURL=tags.js.map

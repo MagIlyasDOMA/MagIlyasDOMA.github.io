@@ -1,7 +1,5 @@
 function handleProjectClick(projectPanel, event) {
     let url = '/' + projectPanel.querySelector('h4').innerHTML;
-    if (url === '/hrenpack_js')
-        url += '?type=browsing';
 
     if (event.button === 0) { // Левая кнопка
         window.location.href = url;
