@@ -1,2 +1,8 @@
 /hrenpack/src/
-/hrenpack_js/src
+/hrenpack_js/src/
+/node_modules/
+/.idea/
+*.ts
+package.json
+package-lock.json
+tsconfig.json
