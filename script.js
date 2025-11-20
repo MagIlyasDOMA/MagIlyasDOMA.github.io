@@ -4,10 +4,10 @@ function handleProjectClick(projectPanel, event) {
     if (!heading)
         return;
     let url = '/' + heading.innerHTML;
-    if (event.button === 0) { // Левая кнопка
+    if (event.button === 0) {
         window.location.href = url;
     }
-    else if (event.button === 1) { // Средняя кнопка
+    else if (event.button === 1) {
         event.preventDefault();
         window.open(url, '_blank');
     }
@@ -18,14 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     const projectPanels = projectsElement.querySelectorAll('.grid-panel');
     projectPanels.forEach(projectPanel => {
-        // Обрабатываем клик левой кнопкой
         projectPanel.addEventListener('click', (event) => {
             const mouseEvent = event;
             if (mouseEvent.button === 0) {
                 handleProjectClick(projectPanel, mouseEvent);
             }
         });
-        // Обрабатываем клик средней кнопкой
         projectPanel.addEventListener('auxclick', (event) => {
             const mouseEvent = event;
             if (mouseEvent.button === 1) {

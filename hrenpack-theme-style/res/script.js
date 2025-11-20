@@ -1,18 +1,18 @@
 "use strict";
 const factory = new ClickableLinksFactory();
-document.addEventListener('DOMContentLoaded', () => {
-    const installDiv = document.getElementById('install-div');
-    if (!installDiv)
-        return;
-    const installCodeElement = installDiv.querySelector('.language-html');
-    if (!installCodeElement)
-        return;
-    const notification = new HyperTextNotification({ backgroundColor: 'rgba(192,0,192,0.8)' });
-    factory.clickToCopyLinks(installCodeElement);
+const notification = new HyperTextNotification({ backgroundColor: 'rgba(192,0,192,0.8)' });
+function clickToCopyLinks(element) {
+    factory.clickToCopyLinks(element);
     factory.generatedElements.forEach((link) => {
-        link.addEventListener('click', function () {
-            notification.show("Ссылка скопирована");
-        });
+        if (element.contains(link)) {
+            link.addEventListener('click', function () {
+                notification.show("Ссылка скопирована");
+            });
+        }
     });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    clickToCopyLinks(document.getElementById('install-div')
+        .querySelector('.language-html'));
 });
 //# sourceMappingURL=script.js.map

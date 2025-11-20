@@ -43,7 +43,8 @@
         <div class="generator generator-border"></div>
         <div class="generator" id="generator-code-div">
             <div id="generator-copy-button">
-                <button class="btn"><b>Копировать</b></button>
+                <button class="btn" onclick="copyButton()"><b>Копировать</b></button>
+                <button class="btn" onclick="downloadButton()"><b>Скачать</b></button>
             </div>
             <pre><code class="language-html"></code></pre>
         </div>
@@ -54,97 +55,113 @@
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="auto" id="id_auto" data-filename="auto.js">
+                        <input oninput="generate()" type="checkbox" name="auto"
+                               id="id_auto" data-filename="auto.js">
                         <label for="id_auto">auto.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="classes" id="id_classes" data-filename="classes.js">
+                        <input oninput="generate()" type="checkbox" name="classes"
+                               id="id_classes" data-filename="classes.js">
                         <label for="id_classes">classes.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="compiler" id="id_compiler" data-filename="compiler.js">
+                        <input oninput="generate()" type="checkbox" name="compiler"
+                               id="id_compiler" data-filename="compiler.js">
                         <label for="id_compiler">compiler.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="cookie" id="id_cookie" data-filename="cookie.js">
+                        <input oninput="generate()" type="checkbox" name="cookie"
+                               id="id_cookie" data-filename="cookie.js">
                         <label for="id_cookie">cookie.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="exceptions" id="id_exceptions" data-filename="exceptions.js">
+                        <input oninput="generate()" type="checkbox" name="exceptions"
+                               id="id_exceptions" data-filename="exceptions.js">
                         <label for="id_exceptions">exceptions.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="get_element_types" id="id_get_element_types" data-filename="get_element_types.js">
+                        <input oninput="generate()" type="checkbox" name="get_element_types"
+                               id="id_get_element_types" data-filename="get_element_types.js">
                         <label for="id_get_element_types">get_element_types.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="html" id="id_html" data-filename="html.js">
+                        <input oninput="generate()" type="checkbox" name="html"
+                               id="id_html" data-filename="html.js">
                         <label for="id_html">html.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="input" id="id_input" data-filename="input.js">
+                        <input oninput="generate()" type="checkbox" name="input"
+                               id="id_input" data-filename="input.js">
                         <label for="id_input">input.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="link" id="id_link" data-filename="link.js">
+                        <input oninput="generate()" type="checkbox" name="link"
+                               id="id_link" data-filename="link.js">
                         <label for="id_link">link.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="notifications" id="id_notifications" data-filename="notifications.js">
+                        <input oninput="generate()" type="checkbox" name="notifications"
+                               id="id_notifications" data-filename="notifications.js">
                         <label for="id_notifications">notifications.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="styles" id="id_styles" data-filename="styles.js">
+                        <input oninput="generate()" type="checkbox" name="styles"
+                               id="id_styles" data-filename="styles.js">
                         <label for="id_styles">styles.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="system" id="id_system" data-filename="system.js">
+                        <input oninput="generate()" type="checkbox" name="system"
+                               id="id_system" data-filename="system.js">
                         <label for="id_system">system.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="tags" id="id_tags" data-filename="tags.js">
+                        <input oninput="generate()" type="checkbox" name="tags"
+                               id="id_tags" data-filename="tags.js">
                         <label for="id_tags">tags.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="types" id="id_types" data-filename="types.js">
+                        <input oninput="generate()" type="checkbox" name="types"
+                               id="id_types" data-filename="types.js">
                         <label for="id_types">types.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="url" id="id_url" data-filename="url.js">
+                        <input oninput="generate()" type="checkbox" name="url"
+                               id="id_url" data-filename="url.js">
                         <label for="id_url">url.js</label>
                     </p>
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="uuid" id="id_uuid" data-filename="uuid.js">
+                        <input oninput="generate()" type="checkbox" name="uuid"
+                               id="id_uuid" data-filename="uuid.js">
                         <label for="id_uuid">uuid.js</label>
                     </p>
                 
@@ -164,12 +181,13 @@
     <script src="/hrenpack_js/notifications.js"></script>
     <script src="/hrenpack_js/classes.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
     <script src="/hrenpack-theme-style/res/script.js"></script>
     
+    <script src="/hrenpack_js/compiler.js"></script>
+    <script src="/hrenpack_js/system.js"></script>
     <script src="/hrenpack_js/html.js"></script>
     <script src="/hrenpack_js/input.js"></script>
-    <!--<script src="/hrenpack_js/res/generator.js"></script>>--><!-- В разработке -->
+    <script src="/hrenpack_js/res/generator.js" data-domain="https://magilyas-doma.github.io"></script>
 
 
 </body>

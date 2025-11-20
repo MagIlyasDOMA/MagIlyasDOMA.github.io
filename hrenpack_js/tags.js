@@ -43,7 +43,6 @@ class AbbreviatedNumber extends HTMLElement {
         };
         const format = (value, digits) => {
             const rounded = round(value, digits);
-            // Убираем лишние нули в дробной части
             let str = rounded.toString();
             if (digits > 0 && str.includes('.')) {
                 str = str.replace(/\.?0+$/, '');
@@ -204,7 +203,6 @@ class Stepbar extends HTMLElement {
     }
     updateSteps() {
         const currentStep = parseInt(this.getAttribute('current') || '1');
-        // const progress = this.shadowRoot!.querySelector('.stepbar-progress') as HTMLElement;
         const elements = Array.from(this.children).filter((el) => el.tagName === 'SB-ELEMENT');
         elements.forEach((element, index) => {
             const stepNumber = index + 1;
@@ -216,10 +214,6 @@ class Stepbar extends HTMLElement {
                 element.status = 'active';
             }
         });
-        /*if (elements.length > 1 && progress) {
-            const progressPercent = ((currentStep - 1) / (elements.length - 1)) * 100;
-            progress.style.width = `${progressPercent}%`;
-        }*/
     }
     get currentStep() {
         return parseInt(this.getAttribute('current') || '1');
@@ -232,11 +226,9 @@ class HTMLFile extends HTMLElement {
     constructor() {
         super();
     }
-    // Getter для src
     get src() {
         return this.getAttribute('src') || '';
     }
-    // Setter для src
     set src(value) {
         if (value) {
             this.setAttribute('src', value);
@@ -263,9 +255,7 @@ class HTMLFile extends HTMLElement {
         try {
             const response = await fetch(src);
             const content = await response.text();
-            // Вставляем HTML
             this.innerHTML = content;
-            // Принудительно выполняем скрипты
             await this.executeScripts();
         }
         catch (error) {
@@ -276,14 +266,11 @@ class HTMLFile extends HTMLElement {
         const scripts = this.querySelectorAll('script');
         for (const script of scripts) {
             if (script.src) {
-                // Внешний скрипт
                 await this.loadExternalScript(script.src);
             }
             else {
-                // Inline скрипт
                 this.executeInlineScript(script.textContent || '');
             }
-            // Удаляем оригинальный script тег
             script.remove();
         }
     }
@@ -307,15 +294,12 @@ class HTMLFile extends HTMLElement {
             console.error('Ошибка выполнения скрипта:', error);
         }
     }
-    // Getter для проверки загрузки
     get loaded() {
         return this.hasAttribute('data-loaded');
     }
-    // Метод для перезагрузки
     reload() {
         return this.loadContent();
     }
-    // Getter для содержимого
     get content() {
         return this.innerHTML;
     }

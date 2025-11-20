@@ -23,9 +23,6 @@ function elementToHyperlink(element, href, cursorPointer = true, preventDefault 
         element.style.cursor = 'pointer';
     return element;
 }
-/**
- * @deprecated Use elementToHyperlink instead
- */
 function elementToAnchor(element, href, cursorPointer = true, preventDefault = false) {
     return elementToHyperlink(element, href, cursorPointer, preventDefault);
 }

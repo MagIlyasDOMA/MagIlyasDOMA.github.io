@@ -25,7 +25,6 @@ function element_toHTMLText(element) {
     const tag = get_tagName(element);
     const attrs = element.attributes;
     let text = `<${tag}`;
-    // Добавляем атрибуты, если они есть
     if (attrs.length > 0) {
         for (let attr of attrs) {
             text += ` ${attr.name}="${attr.value}"`;
@@ -36,7 +35,7 @@ function element_toHTMLText(element) {
 }
 function element_to_div(element) {
     const div = document.createElement('div');
-    div.innerHTML = element.outerHTML; // Простое копирование
+    div.innerHTML = element.outerHTML;
     return div;
 }
 function password_format(shownPasswordHTML, hiddenPasswordHTML) {
@@ -49,10 +48,8 @@ function password_format(shownPasswordHTML, hiddenPasswordHTML) {
                 wrapper.style.position = 'relative';
                 wrapper.style.display = 'inline-block';
                 wrapper.style.width = '100%';
-                // Обёртываем input
                 input.parentNode.insertBefore(wrapper, input);
                 wrapper.appendChild(input);
-                // Создаём кнопку
                 const toggleBtn = document.createElement('button');
                 toggleBtn.type = 'button';
                 toggleBtn.className = 'show-password-btn';
@@ -85,11 +82,9 @@ function escapeHTML(html) {
 }
 function strFormat(template, ...args) {
     return template.replace(/{(\w+)}/g, (match, key) => {
-        // Если ключ есть в аргументах по имени
         if (args.length > 0 && typeof args[0] === 'object' && args[0][key] !== undefined) {
             return args[0][key];
         }
-        // Если ключ - число (позиционный аргумент)
         const index = parseInt(key);
         if (!isNaN(index) && args[index] !== undefined) {
             return args[index];

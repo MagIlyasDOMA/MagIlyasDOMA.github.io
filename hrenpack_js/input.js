@@ -6,16 +6,11 @@ function getInputCursorPosition(input) {
     return start - 1;
 }
 function copyInputToClipboard(input) {
-    // Временно снимаем атрибут disabled
     input.removeAttribute('disabled');
-    // Выделяем текст в input
     input.select();
-    input.setSelectionRange(0, 99999); // Для мобильных устройств
-    // Копируем текст в буфер обмена
+    input.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(input.value)
-        .then(() => {
-        console.log('Текст успешно скопирован: ' + input.value);
-    })
+        .then(() => { })
         .catch(err => {
         console.error('Не удалось скопировать текст: ', err);
     })

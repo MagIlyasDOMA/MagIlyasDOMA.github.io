@@ -25,7 +25,6 @@ function getButtonTextColor(button) {
 function btn_hren_press() {
     const buttons = document.querySelectorAll('.btn-hren');
     buttons.forEach(button => {
-        // Инициализация начальных стилей
         button.style.backgroundColor = getButtonColor(button);
         button.style.color = getButtonTextColor(button);
         button.addEventListener('mousedown', function () {
@@ -64,7 +63,6 @@ function getSystemTheme() {
     }
     return 'light';
 }
-// Инициализация темы
 if (cookieTheme)
     currentTheme = cookieTheme;
 else if (lsTheme)

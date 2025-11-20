@@ -49,4 +49,55 @@ class ClickableLinksFactory {
         return document.querySelectorAll('[data-clf-generated]');
     }
 }
+class GETParamsManager {
+    constructor() {
+        Object.defineProperty(this, "params", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        this.params = new URLSearchParams(window.location.search);
+    }
+    get(key, defaultValue) {
+        const value = this.params.get(key);
+        if (value === null)
+            return defaultValue || null;
+        if (defaultValue !== undefined) {
+            switch (typeof defaultValue) {
+                case 'number':
+                    return Number(value);
+                case 'boolean':
+                    return (value === 'true');
+                default:
+                    return value;
+            }
+        }
+        return value;
+    }
+    set(key, value) {
+        this.params.set(key, String(value));
+        this.updateURL();
+    }
+    delete(key) {
+        this.params.delete(key);
+        this.updateURL();
+    }
+    all() {
+        const result = {};
+        for (const [key, value] of this.params.entries()) {
+            result[key] = value;
+        }
+        return result;
+    }
+    clear() {
+        const keys = Array.from(this.params.keys());
+        keys.forEach(key => this.params.delete(key));
+        this.updateURL();
+    }
+    updateURL() {
+        const newUrl = `${window.location.pathname}?${this.params.toString()}`;
+        window.history.pushState({}, '', newUrl);
+    }
+}
 //# sourceMappingURL=classes.js.map
