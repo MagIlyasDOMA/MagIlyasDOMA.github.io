@@ -6,3 +6,7 @@
 package.json
 package-lock.json
 tsconfig.json
+/hrenpack_js/node_modules
+/hrenpack_js/package.json
+/hrenpack_js/package-lock.json
+/hrenpack_js/tsconfig.json

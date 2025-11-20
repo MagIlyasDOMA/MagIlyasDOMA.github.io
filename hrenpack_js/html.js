@@ -78,9 +78,23 @@ function password_format(shownPasswordHTML, hiddenPasswordHTML) {
         });
     });
 }
-function escape(html) {
+function escapeHTML(html) {
     return html.replace(/[<>"']/g, function (i) {
         return escapeChars[i] || i;
+    });
+}
+function strFormat(template, ...args) {
+    return template.replace(/{(\w+)}/g, (match, key) => {
+        // Если ключ есть в аргументах по имени
+        if (args.length > 0 && typeof args[0] === 'object' && args[0][key] !== undefined) {
+            return args[0][key];
+        }
+        // Если ключ - число (позиционный аргумент)
+        const index = parseInt(key);
+        if (!isNaN(index) && args[index] !== undefined) {
+            return args[index];
+        }
+        return match;
     });
 }
 //# sourceMappingURL=html.js.map
