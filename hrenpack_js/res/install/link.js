@@ -17,4 +17,8 @@ function updateLink() {
         url += separator + 'action=' + action;
     mainInput.value = url;
 }
+function copyLink(input) {
+    copyInputToClipboard(input);
+    notification.show("Ссылка скопирована");
+}
 //# sourceMappingURL=link.js.map

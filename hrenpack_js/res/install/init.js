@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             paramsManager.delete('action');
             console.warn("Неверное значение параметра action");
     }
-    if (redirect)
-        redirectBackOrClose();
+    if (redirect) {
+        paramsManager.delete('action');
+        redirectBackOrClose(window.location.href);
+    }
 });
 //# sourceMappingURL=init.js.map

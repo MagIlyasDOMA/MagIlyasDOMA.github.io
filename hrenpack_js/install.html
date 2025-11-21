@@ -58,6 +58,13 @@
                 
                     
                     <p>
+                        <input oninput="generate()" type="checkbox" name="arraywork"
+                               id="id_arraywork" data-filename="arraywork.js">
+                        <label for="id_arraywork">arraywork.js</label>
+                    </p>
+                
+                    
+                    <p>
                         <input oninput="generate()" type="checkbox" name="auto"
                                id="id_auto" data-filename="auto.js">
                         <label for="id_auto">auto.js</label>
@@ -163,26 +170,22 @@
                 
                     
                     <p>
-                        <input oninput="generate()" type="checkbox" name="utils"
-                               id="id_utils" data-filename="utils.js">
-                        <label for="id_utils">utils.js</label>
-                    </p>
-                
-                    
-                    <p>
                         <input oninput="generate()" type="checkbox" name="uuid"
                                id="id_uuid" data-filename="uuid.js">
                         <label for="id_uuid">uuid.js</label>
                     </p>
                 
+                <p>
+                    <input type="checkbox" name="select_all" id="id_select_all" oninput="selectAll(this.checked)">
+                    <label for="id_select_all">Выбрать все</label>
+                </p>
             </div>
         </div>
         <div class="generator generator-border"></div>
     </div>
     <div id="link-div">
         <label for="id_copy_link" id="cll">Ссылка:</label>
-        <input type="text" name="copy_link" id="id_copy_link" class="form-control-unline" readonly>
-<!--        <button class="btn btn-hren btn-hren-ahren">Копировать</button>-->
+        <input type="text" name="copy_link" id="id_copy_link" class="form-control-unline" readonly onclick="copyLink(this)">
         <ul>
             <li>
                 <input type="checkbox" name="cb_cl" id="id_cb_cl" oninput="updateLink()">
@@ -208,7 +211,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="/hrenpack-theme-style/res/script.js"></script>
     
-    <script src="/hrenpack_js/utils.js"></script>
+    <script src="/hrenpack_js/arraywork.js"></script>
     <script src="/hrenpack_js/compiler.js"></script>
     <script src="/hrenpack_js/system.js"></script>
     <script src="/hrenpack_js/html.js"></script>

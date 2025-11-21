@@ -6,16 +6,17 @@ function getInputCursorPosition(input) {
     return start - 1;
 }
 function copyInputToClipboard(input) {
-    input.removeAttribute('disabled');
-    input.select();
-    input.setSelectionRange(0, 99999);
+    const disabled = input.hasAttribute("disabled");
+    if (disabled)
+        input.removeAttribute('disabled');
     navigator.clipboard.writeText(input.value)
         .then(() => { })
         .catch(err => {
         console.error('Не удалось скопировать текст: ', err);
     })
         .finally(() => {
-        input.setAttribute('disabled', '');
+        if (disabled)
+            input.setAttribute('disabled', '');
     });
 }
 function clearInput_and_addLastSymbol(input) {
