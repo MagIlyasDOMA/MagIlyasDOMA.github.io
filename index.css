@@ -12,3 +12,8 @@
 h3 {
     margin: 5% 0;
 }
+
+#hrenpack_js_doc {
+    display: flex;
+    justify-content: space-between;
+}

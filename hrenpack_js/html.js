@@ -92,4 +92,24 @@ function strFormat(template, ...args) {
         return match;
     });
 }
+function elementToHyperlink(element, href, cursorPointer = true, preventDefault = false) {
+    element.addEventListener('click', function (elem) {
+        if (elem.button === 0)
+            window.location.href = href;
+        else if (elem.button === 1)
+            window.open(href, '_blank');
+    });
+    if (preventDefault) {
+        element.addEventListener('auxclick', function (elem) {
+            if (elem.button === 1)
+                elem.preventDefault();
+        });
+    }
+    if (cursorPointer)
+        element.style.cursor = 'pointer';
+    return element;
+}
+function elementToAnchor(element, href, cursorPointer = true, preventDefault = false) {
+    return elementToHyperlink(element, href, cursorPointer, preventDefault);
+}
 //# sourceMappingURL=html.js.map

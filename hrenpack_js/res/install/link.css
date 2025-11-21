@@ -1,0 +1,37 @@
+#link-div {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    label[for="id_copy_link"] {
+        font-size: 25px;
+        font-weight: bold;
+        width: 0;
+    }
+
+    #id_copy_link {
+        padding: 5px 10px;
+        /*position: relative;*/
+        left: 115px;
+        width: 80%;
+        outline: none;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--hrenpack-a-hover-color);
+    }
+
+    button {
+        width: fit-content;
+        /*position: relative;*/
+    }
+
+    ul {
+        margin-top: 20px;
+        /*position: relative;*/
+        width: 200px;
+        list-style: none;
+    }
+}

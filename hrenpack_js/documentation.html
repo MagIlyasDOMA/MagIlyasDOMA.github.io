@@ -21,397 +21,464 @@
             <button class="btn btn-hren" id="hrenpack-toggle-theme">Изменить тему</button>
         </div>
         
-	<div class="version">Версия 1.0</div>
-    <div class="description">
-        Полная документация JavaScript библиотеки Hrenpack JS.
-        Включает утилиты для работы с DOM, cookie, уведомлениями, кастомными элементами и многое другое.
-    </div>
+	<div class="version">TypeScript библиотека утилит с типами</div>
+        <div class="description">
+            Полная документация TypeScript библиотеки Hrenpack JS
+            Включает строгую типизацию, современные классы и улучшенные Web Components.
+        </div>
 
     </header>
     
     <div class="container">
         <div class="modules-grid">
-                <!-- Модуль auto.js -->
-                <div class="module-card" data-filename="auto">
-                    <div class="module-header">
-                        <div class="module-name">🔧 auto.js</div>
-                    </div>
-                    <div class="module-purpose">Автоматические утилиты и константы</div>
-    
-                    <div class="parameter-list">
-                        <div class="parameter-item">
-                            <div class="parameter-name">stylesRoot</div>
-                            <div class="function-description">Глобальная константа с вычисленными стилями корневого элемента</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль compiler.js -->
-                <div class="module-card" data-filename="compiler">
-                    <div class="module-header">
-                        <div class="module-name">💾 compiler.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы с файлами и данными</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">downloadTextAsFile(filename, text)</div>
-                            <div class="function-description">Скачивает текст как файл с указанным именем</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль console.js -->
-                <div class="module-card" data-filename="console">
-                    <div class="module-header">
-                        <div class="module-name">📝 console.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы с консолью</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">println(value)</div>
-                            <div class="function-description">Алиас для console.log()</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль cookie.js -->
-                <div class="module-card" data-filename="cookie">
-                    <div class="module-header">
-                        <div class="module-name">🍪 cookie.js</div>
-                    </div>
-                    <div class="module-purpose">Работа с cookies</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">getCookie(name)</div>
-                            <div class="function-description">Получает значение cookie по имени</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">setCookie(name, value, days, path)</div>
-                            <div class="function-description">Устанавливает cookie с настройками срока и пути</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">hasCookie(name)</div>
-                            <div class="function-description">Проверяет существование cookie</div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Модуль exceptions.js -->
-                <div class="module-card" data-filename="exceptions">
-                    <div class="module-header">
-                        <div class="module-name">🚫 exceptions.js</div>
-                    </div>
-                    <div class="module-purpose">Пользовательские исключения</div>
-    
-                    <div class="class-list">
-                        <div class="class-item">
-                            <div class="class-name">NotAuthorizedError</div>
-                            <div class="function-description">Исключение для случаев отсутствия авторизации</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль get_element_types.js -->
-                <div class="module-card" data-filename="get_element_types">
-                    <div class="module-header">
-                        <div class="module-name">🔍 get_element_types.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для поиска элементов</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">button_submit(parent)</div>
-                            <div class="function-description">Находит кнопку submit в указанном родителе</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль html.js -->
-                <div class="module-card" data-filename="html">
-                    <div class="module-header">
-                        <div class="module-name">🌐 html.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы с HTML и DOM</div>
-                    
-                    <div class="parameter-list">
-                        <div class="parameter-item">
-                            <div class="parameter-name">escapeChars</div>
-                            <div class="function-description">Список экранируемых символов HTML</div>
-                        </div>
-                    </div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">togglePassword(passwordInput)</div>
-                            <div class="function-description">Переключает видимость пароля</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">isTextWrapped(element)</div>
-                            <div class="function-description">Проверяет, переносится ли текст в элементе</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">notArrayEmpty(array)</div>
-                            <div class="function-description">Проверяет, что массив не пустой</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">get_tagName(element)</div>
-                            <div class="function-description">Получает имя тега в нижнем регистре</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">element_toHTMLText(element)</div>
-                            <div class="function-description">Конвертирует элемент в HTML-строку</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">element_to_div(element)</div>
-                            <div class="function-description">Создает div с копией элемента</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">password_format(shownPasswordHTML, hiddenPasswordHTML)</div>
-                            <div class="function-description">Добавляет функциональность показа/скрытия пароля ко всем формам</div>
-                        </div>
-                        
-                        <div class="function-item">
-                            <div class="function-name">escapeHTML(html)</div>
-                            <div class="function-description">Экранирует HTML</div>
-                        </div>
 
-                        <div class="function-item">
-                            <div class="function-name">strFormat(template: string, ...args: any[])</div>
-                            <div class="function-description">Аналог метода str().format из python</div>
-                        </div>
-                    </div>
+            <!-- Модуль auto.ts -->
+            <div class="module-card" data-filename="auto">
+                <div class="module-header">
+                    <div class="module-name">🔧 auto.ts</div>
                 </div>
-    
-                <!-- Модуль input.js -->
-                <div class="module-card" data-filename="input">
-                    <div class="module-header">
-                        <div class="module-name">⌨️ input.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы с полями ввода</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">getInputCursorPosition(input)</div>
-                            <div class="function-description">Получает позицию курсора в поле ввода</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">copyInputToClipboard(input)</div>
-                            <div class="function-description">Копирует содержимое поля ввода в буфер обмена</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">clearInput_and_addLastSymbol(input)</div>
-                            <div class="function-description">Очищает поле ввода, оставляя только последний символ</div>
-                        </div>
+                <div class="module-purpose">Автоматические утилиты и константы</div>
 
-                        <div class="function-item">
-                            <div class="function-name">getInputLabel(input)</div>
-                            <div class="function-description">Находит label поля ввода</div>
-                        </div>
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">stylesRoot: CSSStyleDeclaration</div>
+                        <div class="function-description">Глобальная константа с вычисленными стилями корневого элемента</div>
                     </div>
                 </div>
-    
-                <!-- Модуль link.js -->
-                <div class="module-card" data-filename="link">
-                    <div class="module-header">
-                        <div class="module-name">🔗 link.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы с ресурсами</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">loadCSS(href)</div>
-                            <div class="function-description">Динамически загружает CSS файл</div>
-                        </div>
-                        <div class="function-item">
-                            <div class="function-name">elementToAnchor(element, href, preventDefault=false)</div>
-                            <div class="function-description">Преобразует HTML-элемент в ссылку</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль notifications.js -->
-                <div class="module-card" data-filename="notifications">
-                    <div class="module-header">
-                        <div class="module-name">🔔 notifications.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для уведомлений</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">pushNotification(title, body, icon)</div>
-                            <div class="function-description">Показывает системное уведомление</div>
-                        </div>
-                    </div>
-    
-                    <div class="class-list">
-                        <div class="class-item">
-                            <div class="class-name">HyperTextNotification</div>
-                            <div class="function-description">Класс для создания кастомных HTML-уведомлений</div>
-                            <div class="parameters">
-                                <strong>Метод:</strong> show(message, timeout) - отображает уведомление
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль styles.js -->
-                <div class="module-card" data-filename="styles">
-                    <div class="module-header">
-                        <div class="module-name">🎨 styles.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы со стилями</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">input_type_fc(input)</div>
-                            <div class="function-description">Проверяет, подходит ли input для form-control</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">input_form_control(form)</div>
-                            <div class="function-description">Добавляет класс form-control ко всем подходящим элементам формы</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">input_form_control_unline(form)</div>
-                            <div class="function-description">Добавляет класс form-control-unline к элементам формы</div>
-                        </div>
-    
-                        <div class="function-item">
-                            <div class="function-name">intToPixel(number)</div>
-                            <div class="function-description">Конвертирует число в строку с px</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль system.js -->
-                <div class="module-card" data-filename="system">
-                    <div class="module-header">
-                        <div class="module-name">💻 system.js</div>
-                    </div>
-                    <div class="module-purpose">Системные утилиты</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">getSystemTheme()</div>
-                            <div class="function-description">Определяет системную тему (dark/light)</div>
-                        </div>
-                        <div class="function-item">
-                            <div class="function-name">copyTextToClipboard(text)</div>
-                            <div class="function-description">Копирует текст в буфер обмена</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль tags.js -->
-                <div class="module-card" data-filename="tags">
-                    <div class="module-header">
-                        <div class="module-name">🏷️ tags.js</div>
-                    </div>
-                    <div class="module-purpose">Кастомные HTML элементы</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">connectBaseCSS()</div>
-                            <div class="function-description">Подключение hrenpack.css</div>
-                        </div>
-                    </div>
-    
-                    <div class="class-list">
-                        <div class="class-item">
-                            <div class="class-name">MainContent</div>
-                            <div class="function-description">Кастомный элемент для основного контента с оберткой</div>
-                        </div>
-    
-                        <div class="class-item">
-                            <div class="class-name">Container</div>
-                            <div class="function-description">Контейнер с настраиваемыми отступами</div>
-                        </div>
-    
-                        <div class="class-item">
-                            <div class="class-name">MessageBox</div>
-                            <div class="function-description">Элемент для сообщений с настраиваемыми цветами</div>
-                        </div>
-    
-                        <div class="class-item">
-                            <div class="class-name">AbbreviatedNumber</div>
-                            <div class="function-description">Элемент для сокращенных чисел с переключением</div>
-                        </div>
-    
-                        <div class="class-item">
-                            <div class="class-name">StepElement & Stepbar</div>
-                            <div class="function-description">Элементы для создания step-by-step навигации</div>
-                        </div>
-    
-                        <div class="class-item">
-                            <div class="class-name">HTMLFile</div>
-                            <div class="function-description">Элемент для включения HTML файлов с поддержкой скриптов</div>
-                        </div>
-                        
-                        <div class="class-item">
-                            <div class="class-name">ClickToCopy</div>
-                            <div class="function-description">Элемент, копирующий свое содержимое при нажатии на него</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль url.js -->
-                <div class="module-card" data-filename="url">
-                    <div class="module-header">
-                        <div class="module-name">🌐 url.js</div>
-                    </div>
-                    <div class="module-purpose">Утилиты для работы с URL</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">isAbsoluteUrl(url)</div>
-                            <div class="function-description">Проверяет, является ли URL абсолютным</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Модуль uuid.js -->
-                <div class="module-card" data-filename="uuid">
-                    <div class="module-header">
-                        <div class="module-name">🆔 uuid.js</div>
-                    </div>
-                    <div class="module-purpose">Генерация уникальных идентификаторов</div>
-    
-                    <div class="function-list">
-                        <div class="function-item">
-                            <div class="function-name">generateUUIDv4()</div>
-                            <div class="function-description">Генерирует UUID версии 4</div>
-                        </div>
-                    </div>
-                </div>
-    
             </div>
-    
-        <div class="header">
-                <h2>🎯 Основные возможности Hrenpack JS</h2>
-                <div class="module-purpose">
-                    <p><strong>Работа с DOM:</strong> Упрощенное управление элементами и их преобразование</p>
-                    <p><strong>Кастомные элементы:</strong> Готовые Web Components для типовых задач</p>
-                    <p><strong>Управление данными:</strong> Cookies, файлы, буфер обмена</p>
-                    <p><strong>Формы и ввод:</strong> Утилиты для валидации и улучшения UX</p>
-                    <p><strong>Уведомления:</strong> Системные и кастомные уведомления</p>
-                    <p><strong>Стили и темы:</strong> Динамическое управление оформлением</p>
-                    <p><strong>Системные утилиты:</strong> Определение темы, генерация UUID</p>
-                    <p><strong>Step-by-step навигация:</strong> Готовые компоненты для многошаговых процессов</p>
+
+            <!-- Модуль classes.ts -->
+            <div class="module-card" data-filename="classes">
+                <div class="module-header">
+                    <div class="module-name">🏗️ classes.ts</div>
                 </div>
+                <div class="module-purpose">Основные классы TypeScript</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">ClickableLinksFactory</div>
+                        <div class="function-description">Фабрика для преобразования URL в кликабельные ссылки</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong><br>
+                            • clickableLinks(element) - создает ссылки<br>
+                            • clickToCopyLinks(element) - создает элементы для копирования<br>
+                            • generatedElements - получает созданные элементы
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">GETParamsManager</div>
+                        <div class="function-description">Менеджер GET-параметров URL с поддержкой типов</div>
+                        <div class="parameters">
+                            <strong>Методы:</strong><br>
+                            • get(key, defaultValue) - получает параметр с приведением типа<br>
+                            • set(key, value) - устанавливает параметр<br>
+                            • delete(key) - удаляет параметр<br>
+                            • all() - получает все параметры<br>
+                            • clear() - очищает все параметры
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль compiler.ts -->
+            <div class="module-card" data-filename="compiler">
+                <div class="module-header">
+                    <div class="module-name">💾 compiler.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с файлами и данными</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">downloadTextAsFile(filename: string, text: string)</div>
+                        <div class="function-description">Скачивает текст как файл с указанным именем</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль cookie.ts -->
+            <div class="module-card" data-filename="cookie">
+                <div class="module-header">
+                    <div class="module-name">🍪 cookie.ts</div>
+                </div>
+                <div class="module-purpose">Работа с cookies с TypeScript типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">getCookie(name: string): NullStr</div>
+                        <div class="function-description">Получает значение cookie по имени</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">setCookie(name: string, value: string, days: NullNum, path: string)</div>
+                        <div class="function-description">Устанавливает cookie с настройками срока и пути</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">hasCookie(name: string): boolean</div>
+                        <div class="function-description">Проверяет существование cookie</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль exceptions.ts -->
+            <div class="module-card" data-filename="exceptions">
+                <div class="module-header">
+                    <div class="module-name">🚫 exceptions.ts</div>
+                </div>
+                <div class="module-purpose">Пользовательские исключения TypeScript</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">NotAuthorizedError</div>
+                        <div class="function-description">Исключение для случаев отсутствия авторизации</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль get_element_types.ts -->
+            <div class="module-card" data-filename="get_element_types">
+                <div class="module-header">
+                    <div class="module-name">🔍 get_element_types.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для поиска элементов с типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">button_submit(parent: HTMLElement): HTMLButtonElement | null</div>
+                        <div class="function-description">Находит кнопку submit в указанном родителе</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль html.ts -->
+            <div class="module-card" data-filename="html">
+                <div class="module-header">
+                    <div class="module-name">🌐 html.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с HTML и DOM с TypeScript</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">togglePassword(passwordInput: HTMLInputElement)</div>
+                        <div class="function-description">Переключает видимость пароля</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">isTextWrapped(element: HTMLElement): boolean</div>
+                        <div class="function-description">Проверяет, переносится ли текст в элементе</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">notArrayEmpty(array: any[]): boolean</div>
+                        <div class="function-description">Проверяет, что массив не пустой</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">element_toHTMLText(element: HTMLElement): string</div>
+                        <div class="function-description">Конвертирует элемент в HTML-строку</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">element_to_div(element: HTMLElement): HTMLDivElement</div>
+                        <div class="function-description">Создает div с копией элемента</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">password_format(shownPasswordHTML: string, hiddenPasswordHTML: string)</div>
+                        <div class="function-description">Добавляет функциональность показа/скрытия пароля ко всем формам</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">escapeHTML(html: string): string</div>
+                        <div class="function-description">Экранирует HTML-символы</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">strFormat(template: string, ...args: any[]): string</div>
+                        <div class="function-description">Форматирование строк с подстановкой</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">elementToHyperlink(element: HTMLElement, href: string, cursorPointer: boolean, preventDefault: boolean)</div>
+                        <div class="function-description">Преобразует элемент в гиперссылку</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль input.ts -->
+            <div class="module-card" data-filename="input">
+                <div class="module-header">
+                    <div class="module-name">⌨️ input.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с полями ввода с типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">getInputCursorPosition(input: HTMLInputElement): number</div>
+                        <div class="function-description">Получает позицию курсора в поле ввода</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">copyInputToClipboard(input: HTMLInputElement)</div>
+                        <div class="function-description">Копирует содержимое поля ввода в буфер обмена</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">clearInput_and_addLastSymbol(input: HTMLInputElement)</div>
+                        <div class="function-description">Очищает поле ввода, оставляя только последний символ</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">getInputLabel(input: HTMLInputElement): HTMLLabelElement</div>
+                        <div class="function-description">Получает label, связанный с input</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль link.ts -->
+            <div class="module-card" data-filename="link">
+                <div class="module-header">
+                    <div class="module-name">🔗 link.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с ресурсами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">loadCSS(href: string)</div>
+                        <div class="function-description">Динамически загружает CSS файл</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль notifications.ts -->
+            <div class="module-card" data-filename="notifications">
+                <div class="module-header">
+                    <div class="module-name">🔔 notifications.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для уведомлений с типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">pushNotification(title: string, body: string, icon: NullStr)</div>
+                        <div class="function-description">Показывает системное уведомление</div>
+                    </div>
+                </div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">HyperTextNotification</div>
+                        <div class="function-description">Класс для создания кастомных HTML-уведомлений</div>
+                        <div class="parameters">
+                            <strong>Метод:</strong> show(message: string, timeout: number) - отображает уведомление
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль styles.ts -->
+            <div class="module-card" data-filename="styles">
+                <div class="module-header">
+                    <div class="module-name">🎨 styles.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы со стилями с типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">input_type_fc(input: HTMLInputElement): boolean</div>
+                        <div class="function-description">Проверяет, подходит ли input для form-control</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">input_form_control(form: HTMLFormElement)</div>
+                        <div class="function-description">Добавляет класс form-control ко всем подходящим элементам формы</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">input_form_control_unline(form: HTMLFormElement)</div>
+                        <div class="function-description">Добавляет класс form-control-unline к элементам формы</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">intToPixel(number: NumStr): string</div>
+                        <div class="function-description">Конвертирует число в строку с px</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль system.ts -->
+            <div class="module-card" data-filename="system">
+                <div class="module-header">
+                    <div class="module-name">💻 system.ts</div>
+                </div>
+                <div class="module-purpose">Системные утилиты с типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">getSystemTheme(): NullStr</div>
+                        <div class="function-description">Определяет системную тему (dark/light)</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">copyTextToClipboard(text: string)</div>
+                        <div class="function-description">Копирует текст в буфер обмена</div>
+                    </div>
+
+                    <div class="function-item">
+                        <div class="function-name">redirectBackOrClose(default_url: string)</div>
+                        <div class="function-description">Возвращает назад или закрывает вкладку</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль tags.ts -->
+            <div class="module-card" data-filename="tags">
+                <div class="module-header">
+                    <div class="module-name">🏷️ tags.ts</div>
+                </div>
+                <div class="module-purpose">Кастомные HTML элементы с TypeScript</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">AbbreviatedNumber</div>
+                        <div class="function-description">Элемент для сокращенных чисел с переключением</div>
+                        <div class="parameters">
+                            <strong>Атрибуты:</strong> lang, use_comma<br>
+                            <strong>События:</strong> click - переключает формат
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">StepElement</div>
+                        <div class="function-description">Элемент шага для step-by-step навигации</div>
+                        <div class="parameters">
+                            <strong>Атрибуты:</strong> active, completed<br>
+                            <strong>Свойства:</strong> index, status<br>
+                            <strong>Методы:</strong> reset()
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">Stepbar</div>
+                        <div class="function-description">Контейнер для step-by-step навигации</div>
+                        <div class="parameters">
+                            <strong>Атрибуты:</strong> current<br>
+                            <strong>Свойства:</strong> currentStep<br>
+                            <strong>Методы:</strong> автоматическое обновление шагов
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">HTMLFile</div>
+                        <div class="function-description">Элемент для включения HTML файлов с поддержкой скриптов</div>
+                        <div class="parameters">
+                            <strong>Атрибуты:</strong> src<br>
+                            <strong>Свойства:</strong> src, content, loaded<br>
+                            <strong>Методы:</strong> reload()
+                        </div>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-name">ClickToCopy</div>
+                        <div class="function-description">Элемент для копирования текста по клику</div>
+                        <div class="parameters">
+                            <strong>Атрибуты:</strong> text, notified<br>
+                            <strong>События:</strong> click - копирует текст и показывает уведомление
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль types.ts -->
+            <div class="module-card" data-filename="types">
+                <div class="module-header">
+                    <div class="module-name">📊 types.ts</div>
+                </div>
+                <div class="module-purpose">Пользовательские TypeScript типы</div>
+
+                <div class="class-list">
+                    <div class="class-item">
+                        <div class="class-name">Типы</div>
+                        <div class="function-description">Базовые типы для всей библиотеки</div>
+                        <div class="parameters">
+                            <strong>Типы:</strong><br>
+                            • NullStr = string | null<br>
+                            • NullNum = number | null<br>
+                            • Dict = {[key: string]: any}<br>
+                            • StringDict = {[key: string]: string}<br>
+                            • NumStr = number | string
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль url.ts -->
+            <div class="module-card" data-filename="url">
+                <div class="module-header">
+                    <div class="module-name">🌐 url.ts</div>
+                </div>
+                <div class="module-purpose">Утилиты для работы с URL с типами</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">isAbsoluteUrl(url: string): boolean</div>
+                        <div class="function-description">Проверяет, является ли URL абсолютным</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль utils.ts -->
+            <div class="module-card" data-filename="utils">
+                <div class="module-header">
+                    <div class="module-name">🛠️ utils.ts</div>
+                </div>
+                <div class="module-purpose">Дополнительные утилиты</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">arrayIsEmpty(arr: any[]): boolean</div>
+                        <div class="function-description">Проверяет, пуст ли массив</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модуль uuid.ts -->
+            <div class="module-card" data-filename="uuid">
+                <div class="module-header">
+                    <div class="module-name">🆔 uuid.ts</div>
+                </div>
+                <div class="module-purpose">Генерация уникальных идентификаторов</div>
+
+                <div class="function-list">
+                    <div class="function-item">
+                        <div class="function-name">generateUUIDv4(): string</div>
+                        <div class="function-description">Генерирует UUID версии 4</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header">
+            <h2>🎯 Основные возможности Hrenpack TypeScript</h2>
+            <div class="module-purpose">
+                <p><strong>Строгая типизация:</strong> Полная поддержка TypeScript с типами для всех функций</p>
+                <p><strong>Современные классы:</strong> ООП подход с инкапсуляцией и наследованием</p>
+                <p><strong>Web Components:</strong> Кастомные элементы с TypeScript и Shadow DOM</p>
+                <p><strong>Улучшенная безопасность:</strong> Валидация типов и обработка ошибок</p>
+                <p><strong>Step-by-step навигация:</strong> Типизированные компоненты для многошаговых процессов</p>
+                <p><strong>Управление состоянием:</strong> Менеджеры параметров и состояний с типами</p>
+                <p><strong>Автодополнение:</strong> Полная поддержка IDE и автодополнения</p>
+                <p><strong>Совместимость:</strong> Полная совместимость с JavaScript версией</p>
+            </div>
+
+            <div class="alert alert-info mt-3">
+                <h4>🔗 Использование кастомных элементов</h4>
+                <p><strong>&lt;ab-num&gt;:</strong> &lt;ab-num lang="ru" use_comma&gt;1234567&lt;/ab-num&gt;</p>
+                <p><strong>&lt;step-bar&gt;:</strong> &lt;step-bar current="2"&gt;&lt;sb-element&gt;Шаг 1&lt;/sb-element&gt;&lt;/step-bar&gt;</p>
+                <p><strong>&lt;include-html&gt;:</strong> &lt;include-html src="/component.html"&gt;&lt;/include-html&gt;</p>
+                <p><strong>&lt;click-to-copy&gt;:</strong> &lt;click-to-copy text="Скопировано!"&gt;Текст для копирования&lt;/click-to-copy&gt;</p>
+            </div>
         </div>
     </div>
 

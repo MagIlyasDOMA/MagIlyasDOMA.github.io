@@ -13,4 +13,17 @@ function copyTextToClipboard(text) {
         console.error('Не удалось скопировать текст: ', err);
     });
 }
+function redirectBackOrClose(default_url = '/') {
+    if (document.referrer && document.referrer !== window.location.href) {
+        window.history.back();
+    }
+    else {
+        window.close();
+        setTimeout(() => {
+            if (!window.closed) {
+                window.location.href = default_url;
+            }
+        }, 100);
+    }
+}
 //# sourceMappingURL=system.js.map

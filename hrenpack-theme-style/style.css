@@ -100,6 +100,7 @@ footer {
     padding: 0;
 }
 
+
 .form-control-unline {
     display: block;
     width: 100%;
@@ -197,7 +198,7 @@ step-bar {
     text-overflow: ellipsis;
 }
 
-.grid-div, grid-div {
+.grid-div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 25px;

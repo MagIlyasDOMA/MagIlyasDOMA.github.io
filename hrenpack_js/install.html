@@ -11,7 +11,10 @@
     
     <link rel="stylesheet" href="/hrenpack-theme-style/res/jb-like-prism.css">
     <link rel="stylesheet" href="/hrenpack-theme-style/res/style.css">
-    <link rel="stylesheet" href="/hrenpack_js/res/generator.css">
+    
+    <link rel="stylesheet" href="/hrenpack_js/res/install/generator.css">
+    <link rel="stylesheet" href="/hrenpack_js/res/install/link.css">
+
 
 </head>
 <body>
@@ -34,7 +37,7 @@
     &lt;title&gt;Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;script src=&quot;https://magilyas-doma.github.io/hrenpack_js/&lt;название нужного файла&gt;.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://magilyasdoma.github.io/hrenpack_js/&lt;название нужного файла&gt;.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
     </div>
@@ -160,6 +163,13 @@
                 
                     
                     <p>
+                        <input oninput="generate()" type="checkbox" name="utils"
+                               id="id_utils" data-filename="utils.js">
+                        <label for="id_utils">utils.js</label>
+                    </p>
+                
+                    
+                    <p>
                         <input oninput="generate()" type="checkbox" name="uuid"
                                id="id_uuid" data-filename="uuid.js">
                         <label for="id_uuid">uuid.js</label>
@@ -168,6 +178,21 @@
             </div>
         </div>
         <div class="generator generator-border"></div>
+    </div>
+    <div id="link-div">
+        <label for="id_copy_link" id="cll">Ссылка:</label>
+        <input type="text" name="copy_link" id="id_copy_link" class="form-control-unline" readonly>
+<!--        <button class="btn btn-hren btn-hren-ahren">Копировать</button>-->
+        <ul>
+            <li>
+                <input type="checkbox" name="cb_cl" id="id_cb_cl" oninput="updateLink()">
+                <label for="id_cb_cl">Копировать</label>
+            </li>
+            <li>
+                <input type="checkbox" name="cb_dl" id="id_cb_dl" oninput="updateLink()">
+                <label for="id_cb_dl">Скачать</label>
+            </li>
+        </ul>
     </div>
     <div style="height: 50px"></div>
 
@@ -183,11 +208,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="/hrenpack-theme-style/res/script.js"></script>
     
+    <script src="/hrenpack_js/utils.js"></script>
     <script src="/hrenpack_js/compiler.js"></script>
     <script src="/hrenpack_js/system.js"></script>
     <script src="/hrenpack_js/html.js"></script>
     <script src="/hrenpack_js/input.js"></script>
-    <script src="/hrenpack_js/res/generator.js" data-domain="https://magilyas-doma.github.io"></script>
+    <script src="/hrenpack_js/res/install/init.js"></script>
+    <script src="/hrenpack_js/res/install/generator.js"></script>
+    <script src="/hrenpack_js/res/install/link.js"></script>
 
 
 </body>

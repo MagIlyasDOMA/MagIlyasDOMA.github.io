@@ -9,7 +9,7 @@ function getButtonColor(button, isHoverOrActive = false) {
     if (button.classList.contains('btn-hren-ahren')) {
         return isHoverOrActive
             ? stylesRoot.getPropertyValue('--hrenpack-a-hover-color')
-            : stylesRoot.getPropertyValue('--hrenpack-bg-ahren');
+            : stylesRoot.getPropertyValue('--hrenpack-background');
     }
     else {
         return isHoverOrActive
