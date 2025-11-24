@@ -56,13 +56,6 @@ function btn_hren_update() {
         button.style.color = getButtonTextColor(button);
     });
 }
-function getSystemTheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').media !== 'not all') {
-        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        return isDark ? 'dark' : 'light';
-    }
-    return 'light';
-}
 if (cookieTheme)
     currentTheme = cookieTheme;
 else if (lsTheme)
