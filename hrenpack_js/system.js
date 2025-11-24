@@ -26,4 +26,7 @@ function redirectBackOrClose(default_url = '/') {
         }, 100);
     }
 }
+function getHost() {
+    return window.location.protocol + '//' + window.location.host;
+}
 //# sourceMappingURL=system.js.map
