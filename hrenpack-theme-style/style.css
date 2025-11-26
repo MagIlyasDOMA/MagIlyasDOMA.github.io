@@ -100,8 +100,7 @@ footer {
     padding: 0;
 }
 
-
-.form-control-unline {
+.form-control-unline, .form-control-hrenpack {
     display: block;
     width: 100%;
     padding: .375rem .75rem;

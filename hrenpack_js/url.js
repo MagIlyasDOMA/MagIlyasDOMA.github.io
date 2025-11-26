@@ -21,4 +21,7 @@ function combineUrls(baseUrl, relativeUrl) {
         throw new Error(`Invalid URL combination: ${baseUrl}, ${relativeUrl}`);
     }
 }
+function getScriptSite(script) {
+    return new URL(script.src).origin;
+}
 //# sourceMappingURL=url.js.map
