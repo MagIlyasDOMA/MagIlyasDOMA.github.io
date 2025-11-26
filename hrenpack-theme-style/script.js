@@ -1,9 +1,15 @@
 "use strict";
-const host = getHost();
+let hrenpack_theme_style_root;
+if (document.currentScript.dataset.root)
+    hrenpack_theme_style_root = document.currentScript.dataset.root;
+else if (document.currentScript.dataset.local !== undefined)
+    hrenpack_theme_style_root = '';
+else
+    hrenpack_theme_style_root = 'https://magilyasdoma.github.io/';
 const tt_button = document.querySelector('#hrenpack-toggle-theme');
 const stylesheet = document.querySelector('#hrenpack-theme-stylesheet');
 const cookieTheme = getCookie?.('theme'), lsTheme = localStorage.getItem('theme');
-const theme_url_prefix = `${host}/hrenpack-theme-style/`;
+const theme_url_prefix = hrenpack_theme_style_root + '/hrenpack-theme-style/';
 const theme_light = theme_url_prefix + 'style_light.css', theme_dark = theme_url_prefix + 'style_dark.css';
 let currentTheme;
 function getButtonColor(button, isHoverOrActive = false) {

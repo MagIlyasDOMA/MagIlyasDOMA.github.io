@@ -30,6 +30,10 @@
     
 	<h3>Установка:</h3>
     <div id="install-div">
+        <div id="install-copy-button">
+            <button class="btn" onclick="copyButton()"><b>Копировать</b></button>
+            <button class="btn" onclick="downloadButton()"><b>Скачать</b></button>
+        </div>
         <pre id="install-pre"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -46,8 +50,8 @@
         <div class="generator generator-border"></div>
         <div class="generator" id="generator-code-div">
             <div id="generator-copy-button">
-                <button class="btn" onclick="copyButton()"><b>Копировать</b></button>
-                <button class="btn" onclick="downloadButton()"><b>Скачать</b></button>
+                <button class="btn" onclick="generatorCopyButton()"><b>Копировать</b></button>
+                <button class="btn" onclick="generatorDownloadButton()"><b>Скачать</b></button>
             </div>
             <pre><code class="language-html"></code></pre>
         </div>
@@ -203,9 +207,10 @@
     <script src="/hrenpack_js/system.js"></script>
     <script src="/hrenpack_js/auto.js"></script>
     <script src="/hrenpack_js/cookie.js"></script>
-    <script src="/hrenpack-theme-style/script.js"></script>
+    <script src="/hrenpack-theme-style/script.js" data-local></script>
     
     <script src="/hrenpack_js/tags.js"></script>
+    <script src="/hrenpack_js/compiler.js"></script>
     <script src="/hrenpack_js/styles.js"></script>
     <script src="/hrenpack_js/notifications.js"></script>
     <script src="/hrenpack_js/classes.js"></script>
@@ -213,7 +218,6 @@
     <script src="/hrenpack-theme-style/res/script.js"></script>
     
     <script src="/hrenpack_js/arraywork.js"></script>
-    <script src="/hrenpack_js/compiler.js"></script>
     <script src="/hrenpack_js/system.js"></script>
     <script src="/hrenpack_js/html.js"></script>
     <script src="/hrenpack_js/input.js"></script>

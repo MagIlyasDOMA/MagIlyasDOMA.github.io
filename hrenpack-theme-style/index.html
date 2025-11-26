@@ -27,6 +27,10 @@
     
 	<h3>Установка:</h3>
     <div id="install-div">
+        <div id="install-copy-button">
+            <button class="btn" onclick="copyButton()"><b>Копировать</b></button>
+            <button class="btn" onclick="downloadButton()"><b>Скачать</b></button>
+        </div>
         <pre id="install-pre"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -44,6 +48,8 @@
     &lt;script src=&quot;https://magilyasdoma.github.io/hrenpack_js/auto.js&quot;&gt;&lt;/script&gt; &lt;!-- Зависимости для script.js --&gt;
     &lt;script src=&quot;https://magilyasdoma.github.io/hrenpack_js/cookie.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;https://magilyasdoma.github.io/hrenpack-theme-style/script.js&quot;&gt;&lt;/script&gt; &lt;!-- Для темной темы --&gt;
+    &lt;!-- Если вы скачали hrenpack-theme-style на ваш сервер --&gt;
+    &lt;script src=&quot;/hrenpack-theme-style/script.js&quot; data-local&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
     </div>
@@ -52,9 +58,10 @@
     <script src="/hrenpack_js/system.js"></script>
     <script src="/hrenpack_js/auto.js"></script>
     <script src="/hrenpack_js/cookie.js"></script>
-    <script src="/hrenpack-theme-style/script.js"></script>
+    <script src="/hrenpack-theme-style/script.js" data-local></script>
     
     <script src="/hrenpack_js/tags.js"></script>
+    <script src="/hrenpack_js/compiler.js"></script>
     <script src="/hrenpack_js/styles.js"></script>
     <script src="/hrenpack_js/notifications.js"></script>
     <script src="/hrenpack_js/classes.js"></script>

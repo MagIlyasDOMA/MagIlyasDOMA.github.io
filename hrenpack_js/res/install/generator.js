@@ -34,14 +34,14 @@ function generate() {
     selectAllInput.checked = paramsManager.get('files') === 'all';
     updateLink();
 }
-function copyButton() {
+function generatorCopyButton() {
     const text = code_element.textContent;
     if (text) {
         copyTextToClipboard(text);
         notification.show("HTML-код скопирован");
     }
 }
-function downloadButton() {
+function generatorDownloadButton() {
     const text = code_element.textContent;
     if (text) {
         downloadTextAsFile(FILENAME, text);
