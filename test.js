@@ -1,13 +1,5 @@
 "use strict";
-function isAbsoluteUrl(url) {
-    try {
-        new URL(url);
-        return true;
-    }
-    catch (e) {
-        return url[0] === '/' || url[0] === '\\';
-    }
-}
+const site = 'https://magilyasdoma.github.io/', empty = '', relative = '/hrenpack-theme-style/';
 function combineUrls(baseUrl, relativeUrl) {
     try {
         if (!baseUrl) {
@@ -21,4 +13,6 @@ function combineUrls(baseUrl, relativeUrl) {
         throw new Error(`Invalid URL combination: ${baseUrl}, ${relativeUrl}`);
     }
 }
-//# sourceMappingURL=url.js.map
+console.log(combineUrls(site, relative));
+console.log(combineUrls(empty, relative));
+//# sourceMappingURL=test.js.map
