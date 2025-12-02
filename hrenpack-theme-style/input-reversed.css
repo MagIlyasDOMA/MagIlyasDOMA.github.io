@@ -1,0 +1,14 @@
+.input-reversed {
+    display: flex;
+    justify-content: center;
+
+    wrapper {
+        display: flex;
+        align-items: center; /* выравнивание по вертикали */
+        gap: 10px; /* отступ между элементами */
+
+        label {
+            text-align: left;
+        }
+    }
+}

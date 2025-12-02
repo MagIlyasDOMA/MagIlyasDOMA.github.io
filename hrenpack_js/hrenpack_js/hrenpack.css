@@ -1,0 +1,18 @@
+:root {
+    --step-bar-circle-bg: #121212;
+    --step-bar-circle-active-bg: #c000c0;
+    --step-bar-circle-completed-bg: #121212;
+    --step-bar-circle-color: #c000c0;
+    --step-bar-circle-active-color: #ededed;
+    --step-bar-circle-completed-color: #ededed;
+    --step-bar-circle-border-color: #121212;
+    --step-bar-circle-border-active-color: #121212;
+    --step-bar-circle-border-completed-color: #c000c0;
+    --step-bar-label-color: #121212;
+    --step-bar-active-label-color: #c000c0;
+    --step-bar-completed-label-color: #222;
+}
+
+click-to-copy {
+    cursor: pointer;
+}

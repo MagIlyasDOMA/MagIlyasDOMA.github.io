@@ -14,7 +14,7 @@
     --hrenpack-fcu-border-radius: 0.375rem;
     --hrenpack-fcu-border-width: 1px;
     --hrenpack-fcu-border-style: solid;
-    --hrenpack-fcu-border-color: #dee2e6;
+    --hrenpack-fcu-border-color: var(--hrenpack-a-hover-color);
     --hrenpack-fcu-color: #212529;
     --hrenpack-fcu-bg: #fff;
     --hrenpack-fcu-grad: #fab;
@@ -113,7 +113,8 @@ footer {
     background-clip: padding-box;
     border: var(--hrenpack-fcu-border-width) solid var(--hrenpack-fcu-border-color);
     border-radius: var(--hrenpack-fcu-border-radius);
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    outline: none;
 }
 
 table {
@@ -143,7 +144,7 @@ table {
     border-radius: 10px;
 
     input, select, textarea {
-        border: #c000c0 solid 1px;
+        border: var(--hrenpack-a-hover-color) solid 1px;
         outline: none !important;
     }
 
@@ -167,7 +168,7 @@ table {
     border-style: inset;       /* Граница с эффектом "вдавленности" */
     border-width: 1px;         /* Толщина границы */
     height: 100%;
-    background: #c000c0;
+    background: var(--hrenpack-a-hover-color);
 }
 
 .undisabled {
