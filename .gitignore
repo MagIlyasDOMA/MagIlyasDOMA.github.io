@@ -12,3 +12,5 @@ tsconfig.json
 /hrenpack_js/tsconfig.json
 /hrenpack_js/documentation_old.html
 /hrenpack_js/documentation_new.html
+!*.d.ts
+node_modules/*.d.ts
