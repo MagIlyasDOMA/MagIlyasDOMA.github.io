@@ -1,16 +1,24 @@
-/hrenpack/src/
-/hrenpack_js/src/
-/node_modules/
+# Для разработки
 /.idea/
-*.ts
-package.json
-package-lock.json
-tsconfig.json
+
+# hrenpack_js
 /hrenpack_js/node_modules
 /hrenpack_js/package.json
 /hrenpack_js/package-lock.json
 /hrenpack_js/tsconfig.json
 /hrenpack_js/documentation_old.html
 /hrenpack_js/documentation_new.html
+/hrenpack_js/src/
+
+# Тоже hrenpack_js
+*.ts
+package.json
+package-lock.json
+tsconfig.json
 !*.d.ts
-node_modules/*.d.ts
+/node_modules/*.d.ts
+/node_modules/
+
+# Ресурсы для дистрибутивов hren
+/hrenpack_js/hrenpack_js/
+/hrenpack-theme-style/hrenpack-theme-style/
