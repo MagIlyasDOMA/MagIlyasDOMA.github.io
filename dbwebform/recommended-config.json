@@ -1,0 +1,12 @@
+{
+  "form": {
+    "meta": {
+      "csrf": false
+    }
+  },
+  "arguments": {
+    "default_rename": true,
+    "log_mode": true,
+    "colon_to_labels": true
+  }
+}
