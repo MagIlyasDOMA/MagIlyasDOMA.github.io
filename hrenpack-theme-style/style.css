@@ -11,6 +11,8 @@
     --hrenpack-foreground-er: #222;
     --hrenpack-a-hover-color: #c000c0;
     --hrenpack-a-pressed-color: #f0f;
+    --hrenpack-button-hover-color: var(--hrenpack-a-hover-color);
+    --hrenpack-button-pressed-color: var(--hrenpack-a-pressed-color);
     --hrenpack-fcu-border-radius: 0.375rem;
     --hrenpack-fcu-border-width: 1px;
     --hrenpack-fcu-border-style: solid;
@@ -81,12 +83,12 @@ footer {
 }
 
 .btn-hren:hover {
-    background: var(--hrenpack-a-hover-color);
+    background: var(--hrenpack-button-hover-color);
     color: var(--hrenpack-foreground);
 }
 
 .btn-hren:active {
-    background-color: var(--hrenpack-a-hover-color);
+    background-color: var(--hrenpack-button-hover-color);
     color: var(--hrenpack-foreground);
 }
 
