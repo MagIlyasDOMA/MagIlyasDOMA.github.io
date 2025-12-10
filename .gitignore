@@ -1,6 +1,5 @@
 # Для разработки
 /.idea/
-private
 
 # hrenpack_js
 /hrenpack_js/node_modules
