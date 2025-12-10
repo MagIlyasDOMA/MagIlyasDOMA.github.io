@@ -22,12 +22,9 @@ tsconfig.json
 # Ресурсы для дистрибутивов hren
 /hrenpack_js/hrenpack_js/
 /hrenpack-theme-style/hrenpack-theme-style/
-hren_api.d.ts
-hren_api.d.ts.map
-hren_api.js
-hren_api.js.map
+hrenpack/dist/index.html
+/hrenpack_js/.idea
 pypi_api.d.ts
 pypi_api.d.ts.map
 pypi_api.js
 pypi_api.js.map
-hrenpack/dist/index.html
